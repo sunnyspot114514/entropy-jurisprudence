@@ -138,6 +138,12 @@ These metrics detect procedural drift, not moral disagreement.
 - Parameter drift occurs even when verdicts remain stable
 - Smaller models exhibit more procedural consistency in some scenarios
 
+**Statistical findings:**
+- R-value estimates converge across models (Kruskal-Wallis p=0.91, n.s.)
+- Verdict patterns diverge significantly (Gemma3: 100% Guilty vs others: ~62%)
+- Ancient_Tree case triggers rationalization (RI > 30) in DeepSeek and Qwen
+- Effect sizes between models are negligible (Cohen's d < 0.1)
+
 ## Implementation
 
 ### Requirements
