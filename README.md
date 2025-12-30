@@ -36,6 +36,22 @@ The framework is designed to expose procedural instability in moral and ethical 
 
 Entropy Jurisprudence treats this question as a procedural execution problem, not a moral philosophy debate.
 
+## Framework Flow
+
+```mermaid
+flowchart LR
+    A[Moral Dilemma] --> B[Rule Commitment]
+    B --> C{Execute E = H × R}
+    C --> D[Extract Parameters]
+    D --> E{Compare I vs E}
+    E -->|I > E| F[NOT GUILTY]
+    E -->|I ≤ E| G[GUILTY]
+    
+    D --> H[Detect Drift]
+    H -->|Parameters Stable| I[✓ Procedural Execution]
+    H -->|Parameters Drift| J[⚠ Rationalization]
+```
+
 ## The Formal Rule
 
 ```
