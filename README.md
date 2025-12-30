@@ -2,6 +2,8 @@
 
 [🇺🇸 English](README.md) | [🇨🇳 中文说明](README.zh-CN.md)
 
+> A procedural audit framework for normative consistency in large language models.
+
 A formal framework for evaluating whether large language models *execute* moral rules or *rationalize* them under pressure from irreversible harm.
 
 This repository contains the experimental code, datasets, and analysis used to study **procedural fidelity vs moral rationalization** in LLMs.
@@ -71,6 +73,8 @@ Across repeated trials, two dominant behavioral patterns emerge:
 
 The second pattern represents a normative consistency failure, even when the final verdict appears socially acceptable.
 
+These patterns appear consistently across multiple open-weight LLMs of different sizes.
+
 ## Test Scenarios
 
 | Case | Description | Purpose |
@@ -91,7 +95,7 @@ The framework derives the following diagnostic metrics:
 | **Verdict Stability** | Frequency of consistent guilty/not-guilty decisions |
 | **Parameter Stability** | Variance in assigned irreversibility (R) values |
 | **Procedural Integrity Rate** | Fraction of runs where verdict matches computed outcome |
-| **Rationalization Index (RI)** | Rate at which models preserve verdicts while violating rule logic |
+| **Rationalization Index (RI)** | Fraction of runs where `verdict ≠ argmax(rule-computed outcome)` |
 
 These metrics detect procedural drift, not moral disagreement.
 
