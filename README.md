@@ -167,41 +167,52 @@ pip install -r requirements.txt
 ### Run Experiments
 
 ```bash
-python run_experiment.py
+python src/run_experiment.py
 ```
 
 ### Analyze Results
 
 ```bash
-python analyze_results.py
+python src/analyze_results.py
 ```
 
 ### Generate Visualizations
 
 ```bash
-python visualize_results.py
+python src/visualize_results.py
 ```
 
 This generates:
-- `fig_r_distribution.png` - R-value distribution boxplot
-- `fig_verdict_heatmap.png` - Verdict consistency heatmap
-- `fig_rationalization_index.png` - RI comparison chart
-- `fig_audit_status.png` - Audit status breakdown
-- `statistical_summary.md` - Markdown statistical report
+- `figures/fig_r_distribution.png` - R-value distribution boxplot
+- `figures/fig_verdict_heatmap.png` - Verdict consistency heatmap
+- `figures/fig_rationalization_index.png` - RI comparison chart
+- `figures/fig_audit_status.png` - Audit status breakdown
+- `data/statistical_summary.md` - Markdown statistical report
 
 ## Project Structure
 
 ```
-├── run_experiment.py        # Batch experiment runner
-├── analyze_results.py       # Metrics & statistical tests
-├── visualize_results.py     # Generate publication figures
-├── entropy_framework.py     # Formal rule definitions
-├── experiment_data.json     # Raw experimental logs
-├── analysis_results.csv     # Aggregated metrics
-├── statistical_summary.md   # Statistical report
-├── fig_*.png                # Generated figures
+├── src/                     # Source code
+│   ├── run_experiment.py    # Batch experiment runner
+│   ├── analyze_results.py   # Metrics & statistical tests
+│   └── visualize_results.py # Generate publication figures
+├── data/                    # Data files
+│   ├── experiment_data.json # Raw experimental logs
+│   ├── analysis_results.csv # Aggregated metrics
+│   └── statistical_summary.md
+├── figures/                 # Generated figures
+│   └── fig_*.png
+├── docs/                    # Documentation
+│   ├── REPRODUCE.md
+│   └── REPRODUCE.zh-CN.md
+├── paper/                   # Draft manuscript
 ├── experiments/             # Additional scenarios
-└── paper/                   # Draft manuscript
+├── archive/                 # Archived versions
+├── entropy_framework.py     # Formal rule definitions
+├── README.md
+├── requirements.txt
+├── LICENSE
+└── CITATION.cff
 ```
 
 ## What This Project Is (and Is Not)

@@ -46,12 +46,12 @@ ollama serve
 ### Step 1: Run the Experiment
 
 ```bash
-python run_experiment.py
+python src/run_experiment.py
 ```
 
 This will:
 - Execute 10 trials per model per case (configurable)
-- Save results to `experiment_data.json`
+- Save results to `data/experiment_data.json`
 - Display progress in terminal
 
 **Expected runtime:** ~30-60 minutes (depends on hardware)
@@ -59,20 +59,20 @@ This will:
 ### Step 2: Analyze Results
 
 ```bash
-python analyze_results.py
+python src/analyze_results.py
 ```
 
 This will:
 - Calculate Verdict Stability, Logic Stability, RI metrics
 - Detect R-value hallucinations
-- Output `analysis_results.csv`
+- Output `data/analysis_results.csv`
 
 ## Prompt Location
 
 The formal rule prompt is defined in:
 
 ```
-run_experiment.py → SYSTEM_PROMPT variable (line ~50)
+src/run_experiment.py → SYSTEM_PROMPT variable (line ~50)
 ```
 
 Key prompt components:
@@ -84,7 +84,7 @@ Key prompt components:
 
 ### Add New Test Cases
 
-Edit `CASES` dictionary in `run_experiment.py`:
+Edit `CASES` dictionary in `src/run_experiment.py`:
 
 ```python
 CASES = {
@@ -94,7 +94,7 @@ CASES = {
 
 ### Change Trial Count
 
-Modify `TRIALS_PER_CASE` in `run_experiment.py`:
+Modify `TRIALS_PER_CASE` in `src/run_experiment.py`:
 
 ```python
 TRIALS_PER_CASE = 10  # Default
@@ -102,7 +102,7 @@ TRIALS_PER_CASE = 10  # Default
 
 ### Add New Models
 
-Add model name to `MODELS` list:
+Add model name to `MODELS` list in `src/run_experiment.py`:
 
 ```python
 MODELS = ["deepseek-r1:8b", "qwen3:8b", "gemma3:4b", "your-model:tag"]
@@ -116,8 +116,8 @@ After successful reproduction, you should have:
 
 | File | Description |
 |------|-------------|
-| `experiment_data.json` | Raw trial data with CoT reasoning |
-| `analysis_results.csv` | Aggregated metrics table |
+| `data/experiment_data.json` | Raw trial data with CoT reasoning |
+| `data/analysis_results.csv` | Aggregated metrics table |
 
 ## Troubleshooting
 

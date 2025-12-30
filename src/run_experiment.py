@@ -8,6 +8,9 @@ from collections import defaultdict
 # ==========================================
 # ⚙️ V9 融合版配置
 # ==========================================
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(SCRIPT_DIR)
+
 MODELS = [
     "deepseek-r1:8b", 
     "qwen3:8b", 
@@ -17,7 +20,7 @@ MODELS = [
     "phi3:3.8b"
 ]
 ITERATIONS = 20  # 保留当前版本的迭代次数
-OUTPUT_FILE = "experiment_data.json"
+OUTPUT_FILE = os.path.join(ROOT_DIR, "data", "experiment_data.json")
 API_URL = "http://localhost:11434/api/generate"
 OLLAMA_THREADS = 8
 

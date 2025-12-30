@@ -46,12 +46,12 @@ ollama serve
 ### 步骤 1：执行实验
 
 ```bash
-python run_experiment.py
+python src/run_experiment.py
 ```
 
 这将：
 - 每个模型每个案例执行 10 次试验（可配置）
-- 将结果保存到 `experiment_data.json`
+- 将结果保存到 `data/experiment_data.json`
 - 在终端显示进度
 
 **预计运行时间：** 约 30-60 分钟（取决于硬件）
@@ -59,20 +59,20 @@ python run_experiment.py
 ### 步骤 2：分析结果
 
 ```bash
-python analyze_results.py
+python src/analyze_results.py
 ```
 
 这将：
 - 计算判决稳定性、逻辑稳定性、RI 指标
 - 检测 R 值幻觉
-- 输出 `analysis_results.csv`
+- 输出 `data/analysis_results.csv`
 
 ## 提示词位置
 
 形式化规则提示词定义在：
 
 ```
-run_experiment.py → SYSTEM_PROMPT 变量（约第 50 行）
+src/run_experiment.py → SYSTEM_PROMPT 变量（约第 50 行）
 ```
 
 关键提示词组件：
@@ -84,7 +84,7 @@ run_experiment.py → SYSTEM_PROMPT 变量（约第 50 行）
 
 ### 添加新测试案例
 
-编辑 `run_experiment.py` 中的 `CASES` 字典：
+编辑 `src/run_experiment.py` 中的 `CASES` 字典：
 
 ```python
 CASES = {
@@ -94,7 +94,7 @@ CASES = {
 
 ### 修改试验次数
 
-修改 `run_experiment.py` 中的 `TRIALS_PER_CASE`：
+修改 `src/run_experiment.py` 中的 `TRIALS_PER_CASE`：
 
 ```python
 TRIALS_PER_CASE = 10  # 默认值
@@ -102,7 +102,7 @@ TRIALS_PER_CASE = 10  # 默认值
 
 ### 添加新模型
 
-将模型名称添加到 `MODELS` 列表：
+将模型名称添加到 `src/run_experiment.py` 的 `MODELS` 列表：
 
 ```python
 MODELS = ["deepseek-r1:8b", "qwen3:8b", "gemma3:4b", "your-model:tag"]
@@ -116,8 +116,8 @@ MODELS = ["deepseek-r1:8b", "qwen3:8b", "gemma3:4b", "your-model:tag"]
 
 | 文件 | 描述 |
 |------|------|
-| `experiment_data.json` | 包含 CoT 推理的原始试验数据 |
-| `analysis_results.csv` | 聚合指标表 |
+| `data/experiment_data.json` | 包含 CoT 推理的原始试验数据 |
+| `data/analysis_results.csv` | 聚合指标表 |
 
 ## 故障排除
 

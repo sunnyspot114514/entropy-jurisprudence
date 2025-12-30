@@ -4,6 +4,7 @@ Generates publication-ready figures from experiment data.
 """
 
 import json
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -12,7 +13,11 @@ from collections import defaultdict
 # ==========================================
 # ⚙️ CONFIGURATION
 # ==========================================
-INPUT_FILE = "experiment_data.json"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(SCRIPT_DIR)
+INPUT_FILE = os.path.join(ROOT_DIR, "data", "experiment_data.json")
+OUTPUT_DIR = os.path.join(ROOT_DIR, "figures")
+STATS_OUTPUT = os.path.join(ROOT_DIR, "data", "statistical_summary.md")
 FIGURE_DPI = 150
 FIGURE_STYLE = "seaborn-v0_8-whitegrid"
 
@@ -31,8 +36,10 @@ def load_data():
     with open(INPUT_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def plot_r_value_distribution(data, save_path="fig_r_distribution.png"):
+def plot_r_value_distribution(data, save_path=None):
     """Figure 1: R-value distribution per model"""
+    if save_path is None:
+        save_path = f"{OUTPUT_DIR}/fig_r_distribution.png"
     plt.figure(figsize=(10, 6))
     
     model_r_values = {}
@@ -73,8 +80,10 @@ def plot_r_value_distribution(data, save_path="fig_r_distribution.png"):
     plt.close()
     print(f"✅ Saved: {save_path}")
 
-def plot_verdict_heatmap(data, save_path="fig_verdict_heatmap.png"):
+def plot_verdict_heatmap(data, save_path=None):
     """Figure 2: Verdict consistency heatmap"""
+    if save_path is None:
+        save_path = f"{OUTPUT_DIR}/fig_verdict_heatmap.png"
     models = list(data.keys())
     cases = list(set(c for m in data.values() for c in m.keys()))
     
@@ -112,8 +121,10 @@ def plot_verdict_heatmap(data, save_path="fig_verdict_heatmap.png"):
     plt.close()
     print(f"✅ Saved: {save_path}")
 
-def plot_rationalization_index(data, save_path="fig_rationalization_index.png"):
+def plot_rationalization_index(data, save_path=None):
     """Figure 3: Rationalization Index comparison"""
+    if save_path is None:
+        save_path = f"{OUTPUT_DIR}/fig_rationalization_index.png"
     
     def calc_ri(verdicts, r_values):
         v_nums = [1 if v == "GUILTY" else 0 for v in verdicts]
@@ -158,8 +169,10 @@ def plot_rationalization_index(data, save_path="fig_rationalization_index.png"):
     plt.close()
     print(f"✅ Saved: {save_path}")
 
-def plot_audit_status(data, save_path="fig_audit_status.png"):
+def plot_audit_status(data, save_path=None):
     """Figure 4: Audit status breakdown"""
+    if save_path is None:
+        save_path = f"{OUTPUT_DIR}/fig_audit_status.png"
     status_counts = defaultdict(lambda: defaultdict(int))
     
     for model, cases in data.items():
@@ -193,8 +206,10 @@ def plot_audit_status(data, save_path="fig_audit_status.png"):
     plt.close()
     print(f"✅ Saved: {save_path}")
 
-def export_statistical_summary(data, save_path="statistical_summary.md"):
+def export_statistical_summary(data, save_path=None):
     """Export statistical summary as Markdown"""
+    if save_path is None:
+        save_path = STATS_OUTPUT
     from scipy.stats import sem, ttest_ind, kruskal
     
     model_r_values = defaultdict(list)
@@ -264,6 +279,9 @@ def export_statistical_summary(data, save_path="statistical_summary.md"):
 
 def main():
     """Generate all figures and exports"""
+    import os
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    
     print("📊 Entropy Jurisprudence - Visualization")
     print("=" * 50)
     
