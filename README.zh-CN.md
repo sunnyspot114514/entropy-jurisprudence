@@ -154,6 +154,9 @@ E = H × R
   - `deepseek-r1:8b`
   - `qwen3:8b`
   - `gemma3:4b`
+  - `llama3:8b`
+  - `mistral:7b`
+  - `phi3:3.8b`
 
 ### 安装
 
@@ -173,15 +176,32 @@ python run_experiment.py
 python analyze_results.py
 ```
 
+### 生成可视化图表
+
+```bash
+python visualize_results.py
+```
+
+生成文件：
+- `fig_r_distribution.png` - R 值分布箱线图
+- `fig_verdict_heatmap.png` - 判决一致性热力图
+- `fig_rationalization_index.png` - RI 对比图
+- `fig_audit_status.png` - 审计状态分布
+- `statistical_summary.md` - Markdown 统计报告
+
 ## 项目结构
 
 ```
 ├── run_experiment.py        # 批量实验运行器
-├── analyze_results.py       # 指标与审计
+├── analyze_results.py       # 指标与统计检验
+├── visualize_results.py     # 生成论文图表
 ├── entropy_framework.py     # 形式化规则定义
 ├── experiment_data.json     # 原始实验日志
 ├── analysis_results.csv     # 聚合指标
-└── experiments/             # 附加场景
+├── statistical_summary.md   # 统计报告
+├── fig_*.png                # 生成的图表
+├── experiments/             # 附加场景
+└── paper/                   # 论文草稿
 ```
 
 ## 本项目是什么（以及不是什么）

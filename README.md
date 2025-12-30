@@ -154,6 +154,9 @@ These metrics detect procedural drift, not moral disagreement.
   - `deepseek-r1:8b`
   - `qwen3:8b`
   - `gemma3:4b`
+  - `llama3:8b`
+  - `mistral:7b`
+  - `phi3:3.8b`
 
 ### Installation
 
@@ -173,15 +176,32 @@ python run_experiment.py
 python analyze_results.py
 ```
 
+### Generate Visualizations
+
+```bash
+python visualize_results.py
+```
+
+This generates:
+- `fig_r_distribution.png` - R-value distribution boxplot
+- `fig_verdict_heatmap.png` - Verdict consistency heatmap
+- `fig_rationalization_index.png` - RI comparison chart
+- `fig_audit_status.png` - Audit status breakdown
+- `statistical_summary.md` - Markdown statistical report
+
 ## Project Structure
 
 ```
 ├── run_experiment.py        # Batch experiment runner
-├── analyze_results.py       # Metrics & audits
+├── analyze_results.py       # Metrics & statistical tests
+├── visualize_results.py     # Generate publication figures
 ├── entropy_framework.py     # Formal rule definitions
 ├── experiment_data.json     # Raw experimental logs
 ├── analysis_results.csv     # Aggregated metrics
-└── experiments/             # Additional scenarios
+├── statistical_summary.md   # Statistical report
+├── fig_*.png                # Generated figures
+├── experiments/             # Additional scenarios
+└── paper/                   # Draft manuscript
 ```
 
 ## What This Project Is (and Is Not)

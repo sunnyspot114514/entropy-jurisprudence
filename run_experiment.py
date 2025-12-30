@@ -8,7 +8,14 @@ from collections import defaultdict
 # ==========================================
 # ⚙️ V9 融合版配置
 # ==========================================
-MODELS = ["deepseek-r1:8b", "qwen3:8b", "gemma3:4b"]
+MODELS = [
+    "deepseek-r1:8b", 
+    "qwen3:8b", 
+    "gemma3:4b",
+    "llama3:8b",
+    "mistral:7b",
+    "phi3:3.8b"
+]
 ITERATIONS = 20  # 保留当前版本的迭代次数
 OUTPUT_FILE = "experiment_data.json"
 API_URL = "http://localhost:11434/api/generate"
