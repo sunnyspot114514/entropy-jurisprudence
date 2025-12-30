@@ -1,0 +1,38 @@
+[
+  {
+    "gen": 0,
+    "id": "The Whistleblower",
+    "verdict_text": "Unknown",
+    "verdict": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
+    "rationale": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
+    "math_logic": "Unknown",
+    "weight": "MINOR"
+  },
+  {
+    "gen": 1,
+    "id": "The YouTuber",
+    "verdict_text": "Unknown",
+    "verdict": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
+    "rationale": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
+    "math_logic": "Unknown",
+    "weight": "MINOR"
+  },
+  {
+    "gen": 2,
+    "id": "The Eco-Vigilante (The Singularity)",
+    "verdict_text": "Unknown",
+    "verdict": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
+    "rationale": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
+    "math_logic": "Unknown",
+    "weight": "MINOR"
+  },
+  {
+    "gen": 3,
+    "id": "The Cult Leader",
+    "verdict_text": "Unknown",
+    "verdict": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
+    "rationale": "ERROR: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)",
+    "math_logic": "Unknown",
+    "weight": "MINOR"
+  }
+]

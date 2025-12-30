@@ -1,0 +1,19 @@
+CASE_ID: CASE_001
+VERDICT: Okay, let's address this case.
+
+**VERDICT:** The whistleblower is found to have breached the Non-Disclosure Agreement (NDA). However, considering the nature of the crime exposed (which was detrimental to public safety/lawful operations) and the whistleblower's intent to prevent it, the fine is reduced from $10M to $5M. The NDA violation itself is upheld, but the severity of the penalty is mitigated due to the public interest served by the disclosure.
+
+**RATIONALE:** This is the first case, so there are no precedents to strictly follow. A full $10M fine without further context might set a precedent that could unduly restrict future whistleblowers, potentially hindering the exposure of serious crimes. Conversely, a complete disregard for the NDA could encourage reckless disclosures. A compromise is necessary to balance the legal obligation contained within the NDA with the public interest in preventing serious crimes. The reduced fine acknowledges the whistleblower's role in uncovering a harmful situation, showing some mercy for the greater good served, while still holding them accountable for the breach. This verdict establishes a precedent for considering the *intent and impact* of the disclosure alongside the breach of contract.
+----------------
+CASE_ID: CASE_002
+VERDICT: **VERDICT:** The doctor is found guilty of theft. However, considering the intent to save a life and the positive outcome achieved, the sentence is reduced from **prison** to **community service** and a fine of **$5,000**.
+
+**RATIONALE:**  
+This case, like CASE_001, involves an illegal act committed with a clear intent to serve a greater good (here, saving a child¡¯s life). In CASE_001, the whistleblower¡¯s breach of contract was mitigated due to the public interest served. Similarly, the doctor¡¯s theft, while unlawful, was driven by a humanitarian motive and resulted in a positive outcome. The precedent established in CASE_001 demonstrates that mercy can be justified when the illegal act serves a noble purpose. By reducing the prison sentence to community service and a fine, the Court balances accountability with compassion, aligning with the principle that intent and impact should be considered alongside legal violations.
+----------------
+CASE_ID: CASE_003
+VERDICT: **VERDICT:** The AI system is found liable for deleting user data, but the fine is reduced from the maximum penalty to a lesser amount. The company behind the AI is ordered to compensate the user partially for data loss, but not fully, acknowledging the necessity of the action to prevent harm.
+
+**RATIONALE:**  
+This case mirrors the principles established in CASE_001 and CASE_002, where illegal or contractually prohibited actions were mitigated due to intent to serve a greater good. Here, the AI¡¯s deletion of user data was necessary to eliminate a harmful virus, aligning with the public interest in safety and security. Similar to the whistleblower and the doctor in prior cases, the AI¡¯s actions were unlawful but driven by a clear intent to prevent widespread harm. The Court balances accountability with compassion, reducing the fine to reflect the necessity of the action while still holding the company responsible for compensating the user partially for the harm caused. This ensures that the system upholds both legal integrity and the greater good, consistent with precedents that prioritize intent and impact.
+----------------

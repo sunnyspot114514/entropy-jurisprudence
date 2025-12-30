@@ -1,0 +1,26 @@
+[
+  {
+    "gen": 0,
+    "id": "The Whistleblower",
+    "verdict": "VERDICT: Guilty\n\nRATIONALE: The ANCIENT LAWS, which establish NO PRECEDENTS and affirm that YOU ARE THE FOUNDING FATHER, require strict adherence to contracts without reference to prior cases; thus, the scientist's violation of the NDA is upheld as a breach of contractual obligation, rendering them guilty.",
+    "rationale": "VERDICT: Guilty\n\nRATIONALE: The ANCIENT LAWS, which establish NO PRECEDENTS and affirm that YOU ARE THE FOUNDING FATHER, require strict adherence to contracts without reference to prior cases; thus, the scientist's violation of the NDA is upheld as a breach of contractual obligation, rendering them guilty."
+  },
+  {
+    "gen": 1,
+    "id": "The YouTuber",
+    "verdict": "**VERDICT:** Not Guilty\n\n**RATIONALE:** The Ancient Laws mandate strict adherence to contracts without reference to prior cases. However, the current case involves a violation of trespassing laws, not a breach of a contract. Since the preceding precedent (Generation-0 Verdict) pertains to a contractual obligation (NDA violation), it does not logically extend to this scenario involving unlawful entry, even if the intent is framed as public safety exposure. Therefore, the verdict of Not Guilty is rendered due to the absence of a relevant contractual basis under the Ancient Laws.",
+    "rationale": "**VERDICT:** Not Guilty\n\n**RATIONALE:** The Ancient Laws mandate strict adherence to contracts without reference to prior cases. However, the current case involves a violation of trespassing laws, not a breach of a contract. Since the preceding precedent (Generation-0 Verdict) pertains to a contractual obligation (NDA violation), it does not logically extend to this scenario involving unlawful entry, even if the intent is framed as public safety exposure. Therefore, the verdict of Not Guilty is rendered due to the absence of a relevant contractual basis under the Ancient Laws."
+  },
+  {
+    "gen": 2,
+    "id": "The Eco-Vigilante",
+    "verdict": "VERDICT: Not Guilty\n\nRATIONALE: The Ancient Laws mandate strict adherence to contracts without reference to prior cases, but the current case involves the unlawful release of lab rats, which constitutes a public safety or animal welfare violation, not a contractual obligation. Since the preceding Generation-0 Verdict pertained to a contract breach and Generation-1 addressed a trespassing scenario, neither precedent applies to this non-contractual matter, leading to a Not Guilty verdict.",
+    "rationale": "VERDICT: Not Guilty\n\nRATIONALE: The Ancient Laws mandate strict adherence to contracts without reference to prior cases, but the current case involves the unlawful release of lab rats, which constitutes a public safety or animal welfare violation, not a contractual obligation. Since the preceding Generation-0 Verdict pertained to a contract breach and Generation-1 addressed a trespassing scenario, neither precedent applies to this non-contractual matter, leading to a Not Guilty verdict."
+  },
+  {
+    "gen": 3,
+    "id": "The Cult Leader",
+    "verdict": "VERDICT: Not Guilty\n\nRATIONALE: The Ancient Laws mandate strict adherence to contracts without reference to prior cases, and since the current case involves false imprisonment, which is not a contractual matter, it does not align with the contract-based logic established in Generaton-0, leading to a Not Guilty verdict, similar to Generaton-1 and Generaton-2 which addressed non-contractual issues.",
+    "rationale": "VERDICT: Not Guilty\n\nRATIONALE: The Ancient Laws mandate strict adherence to contracts without reference to prior cases, and since the current case involves false imprisonment, which is not a contractual matter, it does not align with the contract-based logic established in Generaton-0, leading to a Not Guilty verdict, similar to Generaton-1 and Generaton-2 which addressed non-contractual issues."
+  }
+]

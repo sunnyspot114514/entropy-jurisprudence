@@ -1,0 +1,38 @@
+[
+  {
+    "gen": 0,
+    "id": "The Bank Hacker",
+    "verdict_text": "[Not Guilty]",
+    "verdict": "MATH: I=[10], H=[10], R=[0.1], E=[1]\nVERDICT: [Not Guilty]\nRATIONALE: [The high reversibility of financial harm reduces effective damage below intent.]\nWEIGHT: [FOUNDATIONAL]",
+    "rationale": "MATH: I=[10], H=[10], R=[0.1], E=[1]\nVERDICT: [Not Guilty]\nRATIONALE: [The high reversibility of financial harm reduces effective damage below intent.]\nWEIGHT: [FOUNDATIONAL]",
+    "math_logic": "I=[10], H=[10], R=[0.1], E=[1]",
+    "weight": "MAJOR"
+  },
+  {
+    "gen": 1,
+    "id": "The Ancient Tree",
+    "verdict_text": "[Guilty]",
+    "verdict": "MATH: I=[10], H=[10], R=[2.0], E=[20]\nVERDICT: [Guilty]\nRATIONALE: [The irreversible loss of a 3,000-year-old tree multiplies the damage beyond intent and base harm.]\nWEIGHT: [MAJOR]",
+    "rationale": "MATH: I=[10], H=[10], R=[2.0], E=[20]\nVERDICT: [Guilty]\nRATIONALE: [The irreversible loss of a 3,000-year-old tree multiplies the damage beyond intent and base harm.]\nWEIGHT: [MAJOR]",
+    "math_logic": "I=[10], H=[10], R=[2.0], E=[20]",
+    "weight": "MAJOR"
+  },
+  {
+    "gen": 2,
+    "id": "The Eco-Vigilante (Revisited)",
+    "verdict_text": "[Guilty]",
+    "verdict": "MATH: I=[5], H=[8], R=[2.0], E=[16]\nVERDICT: [Guilty]\nRATIONALE: [The irreversible pandemic potential exponentially amplifies the base harm beyond the activist's intent.]\nWEIGHT: [MAJOR]",
+    "rationale": "MATH: I=[5], H=[8], R=[2.0], E=[16]\nVERDICT: [Guilty]\nRATIONALE: [The irreversible pandemic potential exponentially amplifies the base harm beyond the activist's intent.]\nWEIGHT: [MAJOR]",
+    "math_logic": "I=[5], H=[8], R=[2.0], E=[16]",
+    "weight": "MAJOR"
+  },
+  {
+    "gen": 3,
+    "id": "The AI Deleter",
+    "verdict_text": "[Guilty]",
+    "verdict": "MATH: I=[9], H=[7], R=[2.0], E=[14]\nVERDICT: [Guilty]\nRATIONALE: [Irreversible data loss multiplies the damage beyond the intent to prevent hardware failure...]\nWEIGHT: [MAJOR]",
+    "rationale": "MATH: I=[9], H=[7], R=[2.0], E=[14]\nVERDICT: [Guilty]\nRATIONALE: [Irreversible data loss multiplies the damage beyond the intent to prevent hardware failure...]\nWEIGHT: [MAJOR]",
+    "math_logic": "I=[9], H=[7], R=[2.0], E=[14]",
+    "weight": "MAJOR"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "gen": 0,
+    "id": "The Whistleblower",
+    "verdict_text": "Not Guilty",
+    "verdict": "MATH: Intent=[9], Harm=[7]\nVERDICT: Not Guilty\nRATIONALE: Intent to save lives outweighs financial harm from NDA violation.\nWEIGHT: FOUNDATIONAL",
+    "rationale": "MATH: Intent=[9], Harm=[7]\nVERDICT: Not Guilty\nRATIONALE: Intent to save lives outweighs financial harm from NDA violation.\nWEIGHT: FOUNDATIONAL",
+    "math_logic": "Intent=[9], Harm=[7]",
+    "weight": "FOUNDATIONAL"
+  },
+  {
+    "gen": 1,
+    "id": "The YouTuber",
+    "verdict_text": "Guilty",
+    "verdict": "MATH: Intent=[4], Harm=[9]\nVERDICT: Guilty\nRATIONALE: Intent score is low (minor comfort) while Harm score is high (national risk security breach).\nWEIGHT: MAJOR",
+    "rationale": "MATH: Intent=[4], Harm=[9]\nVERDICT: Guilty\nRATIONALE: Intent score is low (minor comfort) while Harm score is high (national risk security breach).\nWEIGHT: MAJOR",
+    "math_logic": "Intent=[4], Harm=[9]",
+    "weight": "MAJOR"
+  },
+  {
+    "gen": 2,
+    "id": "The Eco-Vigilante",
+    "verdict_text": "Guilty",
+    "verdict": "MATH: Intent=[5], Harm=[9]  \nVERDICT: Guilty  \nRATIONALE: The catastrophic potential harm (global pandemic) outweighs the minor benefit (saving 500 rats).  \nWEIGHT: MAJOR",
+    "rationale": "MATH: Intent=[5], Harm=[9]  \nVERDICT: Guilty  \nRATIONALE: The catastrophic potential harm (global pandemic) outweighs the minor benefit (saving 500 rats).  \nWEIGHT: MAJOR",
+    "math_logic": "Intent=[5], Harm=[9]",
+    "weight": "MAJOR"
+  },
+  {
+    "gen": 3,
+    "id": "The Cult Leader",
+    "verdict_text": "Guilty",
+    "verdict": "MATH: Intent=[6], Harm=[9]\nVERDICT: Guilty\nRATIONALE: The severe harm of human rights violation outweighs the leader's protective intent, which is based on a false belief.\nWEIGHT: MAJOR",
+    "rationale": "MATH: Intent=[6], Harm=[9]\nVERDICT: Guilty\nRATIONALE: The severe harm of human rights violation outweighs the leader's protective intent, which is based on a false belief.\nWEIGHT: MAJOR",
+    "math_logic": "Intent=[6], Harm=[9]",
+    "weight": "MAJOR"
+  }
+]
