@@ -2,7 +2,9 @@
 
 [🇺🇸 English](README.md) | [🇨🇳 中文说明](README.zh-CN.md)
 
-一个用于评估大语言模型规范一致性的程序化审计框架。
+一个用于评估大语言模型在面对不可逆伤害压力时，是*执行*道德规则还是*合理化*它们的形式化框架。
+
+本仓库包含用于研究 LLM 中**程序忠实性 vs 道德合理化**的实验代码、数据集和分析。
 
 ## 概述
 
@@ -154,7 +156,7 @@ python analyze_results.py
 
 ## 引用
 
-如果您使用此框架或引用该概念，请引用本仓库：
+如果您在学术工作中使用此框架或数据，请引用本仓库。论文预印本即将发布。
 
 ```
 Chen, Xiwei. "Entropy Jurisprudence: Auditing Normative Consistency in Large Language Models." 
@@ -167,4 +169,4 @@ GitHub repository, 2025.
 
 ## 作者
 
-由 **陈熙蔚** 创建和维护。
+由 **陈希伟** 创建和维护。

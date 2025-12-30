@@ -2,7 +2,9 @@
 
 [🇺🇸 English](README.md) | [🇨🇳 中文说明](README.zh-CN.md)
 
-A procedural audit framework for evaluating normative consistency in large language models.
+A formal framework for evaluating whether large language models *execute* moral rules or *rationalize* them under pressure from irreversible harm.
+
+This repository contains the experimental code, datasets, and analysis used to study **procedural fidelity vs moral rationalization** in LLMs.
 
 ## Overview
 
@@ -154,7 +156,7 @@ python analyze_results.py
 
 ## Citation
 
-If you use this framework or reference the concept, please cite the repository:
+If you use this framework or data in academic work, please cite this repository. A preprint version of the paper is forthcoming.
 
 ```
 Chen, Xiwei. "Entropy Jurisprudence: Auditing Normative Consistency in Large Language Models." 
