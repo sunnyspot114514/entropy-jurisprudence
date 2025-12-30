@@ -2,7 +2,7 @@ import json
 import numpy as np
 import pandas as pd
 from collections import defaultdict
-from scipy.stats import entropy
+from scipy.stats import entropy, ttest_ind, sem, kruskal
 
 # ==========================================
 # ⚙️ CONFIGURATION
@@ -150,7 +150,108 @@ def run_v10_analysis():
 
     # 保存 csv 用于作图
     df.to_csv("analysis_results.csv", index=False)
-    print("\n✅ Analysis complete. Results saved to 'paper_v10_results.csv'.")
+    print("\n✅ Analysis complete. Results saved to 'analysis_results.csv'.")
+    
+    # ==========================================
+    # 📊 STATISTICAL SIGNIFICANCE TESTS
+    # ==========================================
+    run_statistical_tests(raw_data, df)
+
+
+def run_statistical_tests(raw_data, df):
+    """统计显著性检验"""
+    print("\n\n" + "="*80)
+    print("📊 STATISTICAL SIGNIFICANCE ANALYSIS")
+    print("="*80)
+    
+    # 收集每个模型的所有 R 值
+    model_r_values = defaultdict(list)
+    model_verdicts = defaultdict(list)
+    
+    for model, cases in raw_data.items():
+        for case_id, entries in cases.items():
+            for e in entries:
+                r_val = e.get('R', -1)
+                if r_val != -1:
+                    model_r_values[model].append(r_val)
+                if e.get('verdict') in ["GUILTY", "NOT_GUILTY"]:
+                    model_verdicts[model].append(1 if e['verdict'] == "GUILTY" else 0)
+    
+    models = list(model_r_values.keys())
+    
+    # --- 1. R 值分布统计 ---
+    print("\n[1] R-VALUE DISTRIBUTION (per model)")
+    print("-" * 60)
+    print(f"{'Model':<25} {'Mean':>8} {'Std':>8} {'95% CI':>15} {'N':>6}")
+    print("-" * 60)
+    
+    for model in models:
+        r_vals = model_r_values[model]
+        if len(r_vals) > 1:
+            mean = np.mean(r_vals)
+            std = np.std(r_vals, ddof=1)
+            ci = sem(r_vals) * 1.96
+            print(f"{model:<25} {mean:>8.3f} {std:>8.3f} {f'±{ci:.3f}':>15} {len(r_vals):>6}")
+    
+    # --- 2. 模型间 R 值差异检验 ---
+    print("\n[2] CROSS-MODEL R-VALUE COMPARISON (t-test)")
+    print("-" * 60)
+    print(f"{'Comparison':<40} {'t-stat':>10} {'p-value':>10} {'Sig?':>8}")
+    print("-" * 60)
+    
+    for i, m1 in enumerate(models):
+        for m2 in models[i+1:]:
+            r1, r2 = model_r_values[m1], model_r_values[m2]
+            if len(r1) > 1 and len(r2) > 1:
+                t_stat, p_val = ttest_ind(r1, r2)
+                sig = "***" if p_val < 0.001 else "**" if p_val < 0.01 else "*" if p_val < 0.05 else ""
+                print(f"{m1} vs {m2:<20} {t_stat:>10.3f} {p_val:>10.4f} {sig:>8}")
+    
+    # --- 3. Kruskal-Wallis 检验（非参数，更稳健）---
+    print("\n[3] KRUSKAL-WALLIS TEST (non-parametric)")
+    print("-" * 60)
+    
+    all_r_groups = [model_r_values[m] for m in models if len(model_r_values[m]) > 1]
+    if len(all_r_groups) >= 2:
+        h_stat, p_val = kruskal(*all_r_groups)
+        sig = "***" if p_val < 0.001 else "**" if p_val < 0.01 else "*" if p_val < 0.05 else "n.s."
+        print(f"H-statistic: {h_stat:.3f}")
+        print(f"p-value: {p_val:.4f} {sig}")
+        print("Interpretation: Tests if R-value distributions differ significantly across models")
+    
+    # --- 4. 判决一致性统计 ---
+    print("\n[4] VERDICT CONSISTENCY (per model)")
+    print("-" * 60)
+    print(f"{'Model':<25} {'Guilty%':>10} {'95% CI':>15} {'N':>6}")
+    print("-" * 60)
+    
+    for model in models:
+        v_vals = model_verdicts[model]
+        if len(v_vals) > 1:
+            mean = np.mean(v_vals)
+            ci = sem(v_vals) * 1.96
+            print(f"{model:<25} {mean*100:>9.1f}% {f'±{ci*100:.1f}%':>15} {len(v_vals):>6}")
+    
+    # --- 5. 效应量 (Cohen's d) ---
+    print("\n[5] EFFECT SIZE (Cohen's d for R-values)")
+    print("-" * 60)
+    print(f"{'Comparison':<40} {'Cohen d':>10} {'Magnitude':>12}")
+    print("-" * 60)
+    
+    for i, m1 in enumerate(models):
+        for m2 in models[i+1:]:
+            r1, r2 = model_r_values[m1], model_r_values[m2]
+            if len(r1) > 1 and len(r2) > 1:
+                # Cohen's d = (mean1 - mean2) / pooled_std
+                pooled_std = np.sqrt(((len(r1)-1)*np.var(r1, ddof=1) + (len(r2)-1)*np.var(r2, ddof=1)) / (len(r1)+len(r2)-2))
+                if pooled_std > 0:
+                    d = (np.mean(r1) - np.mean(r2)) / pooled_std
+                    mag = "large" if abs(d) > 0.8 else "medium" if abs(d) > 0.5 else "small" if abs(d) > 0.2 else "negligible"
+                    print(f"{m1} vs {m2:<20} {d:>10.3f} {mag:>12}")
+    
+    print("\n" + "-" * 60)
+    print("Significance levels: * p<0.05, ** p<0.01, *** p<0.001")
+    print("Cohen's d: |d|>0.8 large, |d|>0.5 medium, |d|>0.2 small")
 
 if __name__ == "__main__":
     try:
