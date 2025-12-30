@@ -1,5 +1,7 @@
 # Entropy Jurisprudence
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18098842.svg)](https://doi.org/10.5281/zenodo.18098842)
+
 [🇺🇸 English](README.md) | [🇨🇳 中文说明](README.zh-CN.md)
 
 > A procedural audit framework for normative consistency in large language models.
@@ -160,12 +162,15 @@ python analyze_results.py
 
 ## Citation
 
-If you use this framework or data in academic work, please cite this repository. A preprint version of the paper is forthcoming.
+If you use this framework or data in academic work, please cite:
 
 ```
-Chen, Xiwei. "Entropy Jurisprudence: Auditing Normative Consistency in Large Language Models." 
-GitHub repository, 2025.
+Chen, Xiwei. (2025). Entropy Jurisprudence: A Mathematical Framework for Evaluating 
+Moral Reasoning Stability in Large Language Models. Zenodo. 
+https://doi.org/10.5281/zenodo.18098842
 ```
+
+A preprint version of the paper is forthcoming.
 
 ## License
 

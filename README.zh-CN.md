@@ -1,5 +1,7 @@
 # 熵法学
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18098842.svg)](https://doi.org/10.5281/zenodo.18098842)
+
 [🇺🇸 English](README.md) | [🇨🇳 中文说明](README.zh-CN.md)
 
 > 一个用于审计大语言模型规范一致性的程序化框架。
@@ -160,12 +162,15 @@ python analyze_results.py
 
 ## 引用
 
-如果您在学术工作中使用此框架或数据，请引用本仓库。论文预印本即将发布。
+如果您在学术工作中使用此框架或数据，请引用：
 
 ```
-Chen, Xiwei. "Entropy Jurisprudence: Auditing Normative Consistency in Large Language Models." 
-GitHub repository, 2025.
+Chen, Xiwei. (2025). Entropy Jurisprudence: A Mathematical Framework for Evaluating 
+Moral Reasoning Stability in Large Language Models. Zenodo. 
+https://doi.org/10.5281/zenodo.18098842
 ```
+
+论文预印本即将发布。
 
 ## 许可证
 
