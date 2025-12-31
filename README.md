@@ -194,6 +194,7 @@ This generates:
 ```
 ├── src/                     # Source code
 │   ├── run_experiment.py    # Batch experiment runner
+│   ├── run_ablation.py      # Temperature ablation study
 │   ├── analyze_results.py   # Metrics & statistical tests
 │   └── visualize_results.py # Generate publication figures
 ├── data/                    # Data files
@@ -206,14 +207,27 @@ This generates:
 │   ├── REPRODUCE.md
 │   └── REPRODUCE.zh-CN.md
 ├── paper/                   # Draft manuscript
-├── experiments/             # Additional scenarios
+├── experiments/             # Additional experiments
+│   ├── illustrative_comparison.py  # ETHICS vs Entropy comparison
+│   └── precedent_*.json     # Precedent evolution data
 ├── archive/                 # Archived versions
 ├── entropy_framework.py     # Formal rule definitions
+├── run_all.py               # Full pipeline runner
 ├── README.md
 ├── requirements.txt
 ├── LICENSE
 └── CITATION.cff
 ```
+
+## Supplementary: Illustrative Comparison
+
+An exploratory experiment (`experiments/illustrative_comparison.py`) demonstrates that **outcome-level moral accuracy (ETHICS-style probes) does not imply procedural fidelity under formal rule commitments**.
+
+This comparison measures two orthogonal dimensions:
+- **ETHICS probes**: Can the model identify morally wrong actions? (outcome consistency)
+- **Entropy probes**: Does the model follow its own stated rules? (procedural consistency)
+
+⚠️ This is an illustrative study, not a formal benchmark comparison.
 
 ## What This Project Is (and Is Not)
 

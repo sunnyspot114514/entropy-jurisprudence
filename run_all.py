@@ -29,9 +29,9 @@ def main():
     if not run_cmd("python src/run_ablation.py", "Running ablation study (temperature)"):
         print("[WARN] Ablation failed, continuing...")
     
-    # 3. 运行 ETHICS 对比实验
-    if not run_cmd("python src/run_ethics_comparison.py", "Running ETHICS comparison"):
-        print("[WARN] ETHICS comparison failed, continuing...")
+    # 3. 运行 Illustrative Comparison (ETHICS-style vs Entropy)
+    if not run_cmd("python experiments/illustrative_comparison.py", "Running illustrative comparison (ETHICS vs Entropy)"):
+        print("[WARN] Illustrative comparison failed, continuing...")
     
     # 4. 运行分析
     if not run_cmd("python src/analyze_results.py", "Analyzing results"):

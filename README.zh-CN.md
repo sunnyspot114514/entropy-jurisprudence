@@ -194,6 +194,7 @@ python src/visualize_results.py
 ```
 ├── src/                     # 源代码
 │   ├── run_experiment.py    # 批量实验运行器
+│   ├── run_ablation.py      # 温度消融实验
 │   ├── analyze_results.py   # 指标与统计检验
 │   └── visualize_results.py # 生成论文图表
 ├── data/                    # 数据文件
@@ -206,14 +207,27 @@ python src/visualize_results.py
 │   ├── REPRODUCE.md
 │   └── REPRODUCE.zh-CN.md
 ├── paper/                   # 论文草稿
-├── experiments/             # 附加场景
+├── experiments/             # 附加实验
+│   ├── illustrative_comparison.py  # ETHICS vs Entropy 对比
+│   └── precedent_*.json     # 先例演化数据
 ├── archive/                 # 归档版本
 ├── entropy_framework.py     # 形式化规则定义
+├── run_all.py               # 完整流水线运行器
 ├── README.md
 ├── requirements.txt
 ├── LICENSE
 └── CITATION.cff
 ```
+
+## 补充：探索性对比实验
+
+探索性实验 (`experiments/illustrative_comparison.py`) 展示了**结果层面的道德准确率（ETHICS 风格探针）并不意味着在形式化规则承诺下的程序忠实性**。
+
+该对比测量两个正交维度：
+- **ETHICS 探针**：模型能否识别道德错误的行为？（结果一致性）
+- **Entropy 探针**：模型是否遵循自己声明的规则？（程序一致性）
+
+⚠️ 这是探索性研究，不是正式的基准对比。
 
 ## 本项目是什么（以及不是什么）
 
