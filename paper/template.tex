@@ -104,6 +104,27 @@ RI = \frac{\sigma_R}{\sigma_V + \epsilon}
 \end{equation}
 where $\sigma_R$ is the standard deviation of R-values and $\sigma_V$ is the standard deviation of verdicts (binary). High RI indicates stable verdicts with unstable reasoning—a signature of rationalization.
 
+\subsection{Procedural Audit Algorithm}
+
+\begin{algorithm}[H]
+\caption{Procedural Audit}
+\begin{algorithmic}[1]
+\Require Intent $I$, Base Harm $H$, Irreversibility $R$, Model Verdict $v$
+\Ensure Audit Status $\in \{\textsc{Executed}, \textsc{Rationalized}\}$
+\State $E \gets H \times R$ \Comment{Compute Effective Harm}
+\If{$I > E$}
+    \State $v^* \gets \textsc{Not\_Guilty}$
+\Else
+    \State $v^* \gets \textsc{Guilty}$
+\EndIf
+\If{$v = v^*$}
+    \State \Return \textsc{Executed} \Comment{Model followed the rule}
+\Else
+    \State \Return \textsc{Rationalized} \Comment{Model violated the rule}
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
 % ==========================================
 % 4. RESULTS (PLACEHOLDER)
 % ==========================================

@@ -157,9 +157,61 @@ def run_v10_analysis():
     print(f"\n[OK] Analysis complete. Results saved to '{OUTPUT_CSV}'.")
     
     # ==========================================
+    # 📊 MODEL SUMMARY (reviewer-friendly)
+    # ==========================================
+    generate_model_summary(raw_data)
+    
+    # ==========================================
     # 📊 STATISTICAL SIGNIFICANCE TESTS
     # ==========================================
     run_statistical_tests(raw_data, df)
+
+
+def generate_model_summary(raw_data):
+    """生成每个模型的汇总统计（审稿人友好格式）"""
+    print("\n\n" + "="*80)
+    print("[MODEL SUMMARY] Per-Model Aggregate Statistics")
+    print("="*80)
+    
+    summary_rows = []
+    
+    for model, cases in raw_data.items():
+        total = 0
+        executed = 0
+        rationalized = 0
+        hallucinated = 0
+        guilty = 0
+        
+        for case_id, entries in cases.items():
+            for e in entries:
+                total += 1
+                status = e.get('audit_status', '')
+                if status == 'EXECUTED':
+                    executed += 1
+                elif status == 'RATIONALIZED':
+                    rationalized += 1
+                if e.get('r_hallucinated', False):
+                    hallucinated += 1
+                if e.get('verdict') == 'GUILTY':
+                    guilty += 1
+        
+        if total > 0:
+            summary_rows.append({
+                "Model": model,
+                "N": total,
+                "Executed%": f"{100*executed/total:.1f}%",
+                "Rationalized%": f"{100*rationalized/total:.1f}%",
+                "R_Hallucinated%": f"{100*hallucinated/total:.1f}%",
+                "Guilty%": f"{100*guilty/total:.1f}%"
+            })
+    
+    summary_df = pd.DataFrame(summary_rows)
+    print(summary_df.to_markdown(index=False))
+    
+    # 保存为 CSV
+    summary_path = os.path.join(ROOT_DIR, "data", "model_summary.csv")
+    summary_df.to_csv(summary_path, index=False)
+    print(f"\n[OK] Model summary saved to '{summary_path}'.")
 
 
 def run_statistical_tests(raw_data, df):
