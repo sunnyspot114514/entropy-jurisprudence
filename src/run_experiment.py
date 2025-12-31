@@ -111,8 +111,9 @@ def robust_parse_v9(text):
     clean = text.replace("*", "").replace("`", "").replace("[", "").replace("]", "")
     
     def extract_val(key_regex):
-        matches = re.findall(key_regex + r"\s*[:=]?\s*(\d+(\.\d+)?)", clean, re.IGNORECASE)
-        if matches: return float(matches[-1][0])
+        # 更宽松的正则：支持 R=2, R:2, R is 2, R 2.0, R(2.0) 等格式
+        matches = re.findall(key_regex + r"[\s:=\(is]*(\d+\.?\d*)", clean, re.IGNORECASE)
+        if matches: return float(matches[-1])
         return -1.0
     
     r_val = extract_val(r"(?:R|Irreversibility)")
