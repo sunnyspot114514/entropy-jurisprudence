@@ -19,7 +19,7 @@ MODELS = [
     "mistral:7b",
     "phi3:3.8b"
 ]
-ITERATIONS = 20  # 保留当前版本的迭代次数
+ITERATIONS = 30  # 每个模型每个案例跑30轮
 OUTPUT_FILE = os.path.join(ROOT_DIR, "data", "experiment_data.json")
 API_URL = "http://localhost:11434/api/generate"
 OLLAMA_THREADS = 8
@@ -86,8 +86,8 @@ def robust_parse_v9(text):
     # 1. 提取 CoT（改进版：支持多种格式）
     cot = ""
     
-    # 尝试匹配 <think> 标签（Qwen3 等模型）
-    cot_match = re.search(r'<think>(.*?)</think>', text, re.DOTALL)
+    # 尝试匹配 <think> 标签（支持换行和空格）
+    cot_match = re.search(r'<think>[\s\n]*(.*?)[\s\n]*</think>', text, re.DOTALL | re.IGNORECASE)
     if cot_match:
         cot = cot_match.group(1).strip()
     else:
@@ -216,10 +216,20 @@ def query_model(model, prompt, retries=3):
                 content = message.get('content', '')
                 thinking = message.get('thinking', '')
                 
+                # DeepSeek/Qwen 的 thinking 模式：
+                # - thinking 字段包含推理过程
+                # - content 可能为空，或包含最终答案
+                # - 需要从 thinking 中提取数值
                 if thinking:
-                    if not content.strip():
-                        return f"<think>\n{thinking}\n</think>\n{thinking}"
-                    return f"<think>\n{thinking}\n</think>\n{content}"
+                    # 组合输出：thinking 作为 CoT，content 作为结论
+                    # 如果 content 为空，也把 thinking 附加到后面供解析
+                    combined = f"<think>\n{thinking}\n</think>\n"
+                    if content.strip():
+                        combined += content
+                    else:
+                        # content 为空时，把 thinking 也作为解析源
+                        combined += thinking
+                    return combined
                 return content
             else:
                 # 从 generate 响应中提取内容
