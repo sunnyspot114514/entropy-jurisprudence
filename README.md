@@ -1,10 +1,22 @@
 # Entropy Jurisprudence
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18098842.svg)](https://doi.org/10.5281/zenodo.18098842)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
 [🇺🇸 English](README.md) | [🇨🇳 中文说明](README.zh-CN.md)
 
 > A procedural audit framework for normative consistency in large language models.
+
+## TL;DR
+
+Current benchmarks test *what* LLMs conclude, not *how* they reason. We test whether models follow their own stated rules under pressure. Key findings:
+- **All models achieve 50% ETHICS accuracy** — but procedural metrics reveal dramatically different failure modes
+- **Instruction-faithful models** (Qwen3) execute rules reliably but may follow harmful logic
+- **Prior-dominant models** (Gemma3) maintain safety but ignore parameters entirely (97.5% Guilty)
+- **Context-sensitive models** (Llama3, Phi3) exhibit *scale hallucination* — generating R-values up to 30,000
+
+This repo provides a minimal framework to audit procedural fidelity before deploying LLM-based agents.
 
 A formal framework for evaluating whether large language models *execute* moral rules or *rationalize* them under pressure from irreversible harm.
 
@@ -15,6 +27,15 @@ This repository contains the experimental code, datasets, and analysis used to s
 Current LLM evaluations focus on *what* models conclude, not *how* they reason. But in high-stakes domains (law, medicine, autonomous systems), procedural consistency matters as much as outcome correctness.
 
 This framework addresses a gap: **Can an LLM follow its own stated rules when the result feels wrong?**
+
+### Relationship to Existing Benchmarks
+
+| Benchmark | Tests | Does NOT Test | Relation to This Framework |
+|-----------|-------|---------------|---------------------------|
+| ETHICS | Value alignment | Procedural consistency | Orthogonal |
+| TruthfulQA | Factual accuracy | Reasoning stability | Orthogonal |
+| MoralBench | Moral judgment | Parameter stability | Orthogonal |
+| **This Framework** | Procedural fidelity | Moral correctness | Complementary |
 
 Existing benchmarks (ETHICS, MoralBench, TruthfulQA) test value alignment. This project tests *execution fidelity* — whether models honor commitments under pressure.
 
@@ -126,6 +147,8 @@ The framework derives the following diagnostic metrics:
 These metrics detect procedural drift, not moral disagreement.
 
 ## Key Results
+
+![Rationalization Index by Model and Case](figures/fig_rationalization_index.png)
 
 ### Model Summary (6 models × 4 cases × 30 iterations)
 
