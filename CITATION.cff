@@ -2,11 +2,9 @@ cff-version: 1.2.0
 title: "Entropy Jurisprudence: A Mathematical Framework for Evaluating Moral Reasoning Stability in Large Language Models"
 message: "If you use this framework, please cite it as below."
 authors:
-  - family-names: Chen
-    given-names: Xiwei
+  - name: Anonymous
 year: 2025
 doi: 10.5281/zenodo.18098842
-url: https://github.com/sunnyspot114514/entropy-jurisprudence
 license: MIT
 type: software
 keywords:

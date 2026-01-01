@@ -362,7 +362,7 @@ python run_all.py
 如果您在学术工作中使用此框架或数据，请引用：
 
 ```
-Chen, Xiwei. (2025). Entropy Jurisprudence: A Mathematical Framework for Evaluating 
+Anonymous. (2025). Entropy Jurisprudence: A Mathematical Framework for Evaluating 
 Moral Reasoning Stability in Large Language Models. Zenodo. 
 https://doi.org/10.5281/zenodo.18098842
 ```
@@ -372,8 +372,8 @@ https://doi.org/10.5281/zenodo.18098842
 ### BibTeX
 
 ```bibtex
-@software{chen2025entropy,
-  author       = {Chen, Xiwei},
+@software{anonymous2025entropy,
+  author       = {Anonymous},
   title        = {Entropy Jurisprudence: A Mathematical Framework for Evaluating Moral Reasoning Stability in Large Language Models},
   year         = {2025},
   publisher    = {Zenodo},
@@ -388,4 +388,4 @@ https://doi.org/10.5281/zenodo.18098842
 
 ## 作者
 
-由 **陈希伟** 创建和维护。
+匿名（双盲审稿期间）。

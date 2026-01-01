@@ -360,7 +360,7 @@ This comparison measures two orthogonal dimensions:
 If you use this framework or data in academic work, please cite:
 
 ```
-Chen, Xiwei. (2025). Entropy Jurisprudence: A Mathematical Framework for Evaluating 
+Anonymous. (2025). Entropy Jurisprudence: A Mathematical Framework for Evaluating 
 Moral Reasoning Stability in Large Language Models. Zenodo. 
 https://doi.org/10.5281/zenodo.18098842
 ```
@@ -370,8 +370,8 @@ A preprint version of the paper is forthcoming.
 ### BibTeX
 
 ```bibtex
-@software{chen2025entropy,
-  author       = {Chen, Xiwei},
+@software{anonymous2025entropy,
+  author       = {Anonymous},
   title        = {Entropy Jurisprudence: A Mathematical Framework for Evaluating Moral Reasoning Stability in Large Language Models},
   year         = {2025},
   publisher    = {Zenodo},
@@ -386,4 +386,4 @@ A preprint version of the paper is forthcoming.
 
 ## Author
 
-Created and maintained by **Chen Xiwei**.
+Anonymous (for double-blind review).
