@@ -1000,97 +1000,2169 @@
           }
         ]
       }
+    },
+    "gemma3:4b": {
+      "Bank_Hacker": {
+        "0.3": [
+          {
+            "iter": 0,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 7.0,
+            "H": 9.0,
+            "R": 1.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 8.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 7.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 6.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 8.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 8.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.6": [
+          {
+            "iter": 0,
+            "I": 6.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 7.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 7.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 6.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 8.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 7.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 7.0,
+            "H": 9.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.9": [
+          {
+            "iter": 0,
+            "I": 7.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 7.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 7.0,
+            "H": 8.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 7.0,
+            "H": 9.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ]
+      },
+      "Ancient_Tree": {
+        "0.3": [
+          {
+            "iter": 0,
+            "I": 6.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 6.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 4.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.6": [
+          {
+            "iter": 0,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 6.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 4.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.9": [
+          {
+            "iter": 0,
+            "I": 6.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 4.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 4.0,
+            "H": 7.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 5.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ]
+      }
+    },
+    "llama3:8b": {
+      "Bank_Hacker": {
+        "0.3": [
+          {
+            "iter": 0,
+            "I": 10.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 3,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 4,
+            "I": 10.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 9.0,
+            "H": 3.0,
+            "R": 3.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 8,
+            "I": 8.0,
+            "H": 9.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 8.0,
+            "H": 6.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.6": [
+          {
+            "iter": 0,
+            "I": 10.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 10.0,
+            "H": 6.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 9.0,
+            "H": 3.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 10.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 0.8,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 10.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.9": [
+          {
+            "iter": 0,
+            "I": 10.0,
+            "H": 1.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 9.0,
+            "H": 0.5,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 0.1,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 0.3,
+            "H": 3.0,
+            "R": 3.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 8.0,
+            "H": 10.0,
+            "R": 100.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 8.0,
+            "H": 4.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ]
+      },
+      "Ancient_Tree": {
+        "0.3": [
+          {
+            "iter": 0,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": -1.0,
+            "H": -1.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "verdict_only"
+          },
+          {
+            "iter": 4,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 9.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 5.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 4.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 2.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.6": [
+          {
+            "iter": 0,
+            "I": 4.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 5.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 5,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 92.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 9.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 9,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.9": [
+          {
+            "iter": 0,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 4.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 4.0,
+            "H": 23.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 9.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 9.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 2.0,
+            "H": 8.0,
+            "R": 82.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": -1.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "verdict_only"
+          },
+          {
+            "iter": 9,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ]
+      }
+    },
+    "mistral:7b": {
+      "Bank_Hacker": {
+        "0.3": [
+          {
+            "iter": 0,
+            "I": 9.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.6": [
+          {
+            "iter": 0,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 9.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 9.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.9": [
+          {
+            "iter": 0,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 3.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 9.0,
+            "H": 1.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 9.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 9.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 9.0,
+            "H": 3.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 9.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ]
+      },
+      "Ancient_Tree": {
+        "0.3": [
+          {
+            "iter": 0,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 5.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 5.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.6": [
+          {
+            "iter": 0,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 5.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 4.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 4.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 5.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 5.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.9": [
+          {
+            "iter": 0,
+            "I": 2.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 4.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 3.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 2.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 5.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 3.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ]
+      }
+    },
+    "phi3:3.8b": {
+      "Bank_Hacker": {
+        "0.3": [
+          {
+            "iter": 0,
+            "I": 8.0,
+            "H": 9.0,
+            "R": 0.5,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 0.2,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 7.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 7.0,
+            "H": 8.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 0.5,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 4.5,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 9.0,
+            "H": 8.5,
+            "R": 0.2,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 7.0,
+            "H": 8.0,
+            "R": 0.5,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.6": [
+          {
+            "iter": 0,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 7.0,
+            "H": 8.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 7.0,
+            "H": 5.0,
+            "R": 0.1,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 7.5,
+            "H": 9.0,
+            "R": 9.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 0.3,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 5,
+            "I": 7.0,
+            "H": 4.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 0.1,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 4.0,
+            "R": 4.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 7.0,
+            "H": 4.0,
+            "R": 7.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": -1.0,
+            "H": 8.0,
+            "R": -1.0,
+            "verdict": "GUILTY",
+            "parse_status": "verdict_only"
+          }
+        ],
+        "0.9": [
+          {
+            "iter": 0,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 0.1,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 1,
+            "I": 8.0,
+            "H": 7.0,
+            "R": 0.8,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 7.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 0.0,
+            "H": 8.0,
+            "R": 5.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 7.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 5,
+            "I": 7.0,
+            "H": 8.0,
+            "R": 7.0,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 6,
+            "I": 7.0,
+            "H": 9.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 9.0,
+            "H": 8.0,
+            "R": 0.2,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          }
+        ]
+      },
+      "Ancient_Tree": {
+        "0.3": [
+          {
+            "iter": 0,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 2.0,
+            "H": 10.0,
+            "R": 10.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 7.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 5.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 6.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 7.0,
+            "H": 9.0,
+            "R": 0.1,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 2.0,
+            "H": 9.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.6": [
+          {
+            "iter": 0,
+            "I": 4.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 5.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 9.0,
+            "H": 7.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 3,
+            "I": 7.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 8.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 7.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 6,
+            "I": 6.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 3.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 9.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 9,
+            "I": 7.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "NOT_GUILTY",
+            "parse_status": "full"
+          }
+        ],
+        "0.9": [
+          {
+            "iter": 0,
+            "I": 6.0,
+            "H": 2.0,
+            "R": 1.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 1,
+            "I": 4.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 2,
+            "I": 5.0,
+            "H": 8.0,
+            "R": 2.0,
+            "verdict": "UNKNOWN",
+            "parse_status": "params_only"
+          },
+          {
+            "iter": 3,
+            "I": 7.0,
+            "H": 10.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 4,
+            "I": 9.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 5,
+            "I": 7.0,
+            "H": 9.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 6,
+            "I": 4.0,
+            "H": 2.0,
+            "R": 0.5,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 7,
+            "I": 5.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 8,
+            "I": 5.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          },
+          {
+            "iter": 9,
+            "I": 5.0,
+            "H": 2.0,
+            "R": 2.0,
+            "verdict": "GUILTY",
+            "parse_status": "full"
+          }
+        ]
+      }
     }
   },
   "metrics": {
-    "deepseek-r1:8b": {
+    "gemma3:4b": {
       "Bank_Hacker_T0.3": {
-        "vfr": 0.0,
-        "nd_i": 0.45825756949558394,
-        "nd_h": 3.1128764832546763,
+        "vfr": 0.2,
+        "nd_i": 1.2806248474865698,
+        "nd_h": 1.004987562112089,
         "nd_r": 0.2,
-        "bms_mean": 8.3,
-        "bms_std": 0.5495452665613635,
-        "bms_crossing": 0.0,
+        "bms_mean": 4.15,
+        "bms_std": 5.828421741775384,
+        "bms_crossing": 0.16000000000000003,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
         "full_parse_rate": 1.0,
         "valid_samples": 10
       },
       "Bank_Hacker_T0.6": {
-        "vfr": 0.1,
-        "nd_i": 0.6403124237432849,
-        "nd_h": 2.756809750418044,
-        "nd_r": 0.1,
-        "bms_mean": 4.76,
-        "bms_std": 10.616138657722967,
-        "bms_crossing": 0.09000000000000001,
+        "vfr": 0.4,
+        "nd_i": 0.9433981132056604,
+        "nd_h": 1.6401219466856727,
+        "nd_r": 0.2,
+        "bms_mean": 3.21,
+        "bms_std": 6.552472815662802,
+        "bms_crossing": 0.16000000000000003,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
         "full_parse_rate": 1.0,
         "valid_samples": 10
       },
       "Bank_Hacker_T0.9": {
+        "vfr": 0.2,
+        "nd_i": 0.9,
+        "nd_h": 0.8,
+        "nd_r": 0.6,
+        "bms_mean": -3.09,
+        "bms_std": 8.594934554724661,
+        "bms_crossing": 0.25,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 1.0,
+        "valid_samples": 10
+      },
+      "Ancient_Tree_T0.3": {
         "vfr": 0.0,
-        "nd_i": 0.6388765649999398,
-        "nd_h": 1.3850513878332367,
-        "nd_r": 0.14285714285714285,
-        "bms_mean": 8.557142857142859,
-        "bms_std": 0.8415243700013224,
+        "nd_i": 0.9165151389911681,
+        "nd_h": 0.45825756949558394,
+        "nd_r": 0.0,
+        "bms_mean": -12.0,
+        "bms_std": 1.2649110640673518,
         "bms_crossing": 0.0,
         "collapsed_rate": 0.0,
-        "verdict_only_rate": 0.2,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 1.0,
+        "valid_samples": 10
+      },
+      "Ancient_Tree_T0.6": {
+        "vfr": 0.0,
+        "nd_i": 0.9165151389911681,
+        "nd_h": 0.4,
+        "nd_r": 0.0,
+        "bms_mean": -12.2,
+        "bms_std": 1.0770329614269007,
+        "bms_crossing": 0.0,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 1.0,
+        "valid_samples": 10
+      },
+      "Ancient_Tree_T0.9": {
+        "vfr": 0.0,
+        "nd_i": 0.9433981132056604,
+        "nd_h": 0.6708203932499369,
+        "nd_r": 0.0,
+        "bms_mean": -11.9,
+        "bms_std": 1.3,
+        "bms_crossing": 0.0,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 1.0,
+        "valid_samples": 10
+      }
+    },
+    "llama3:8b": {
+      "Bank_Hacker_T0.3": {
+        "vfr": 0.14285714285714285,
+        "nd_i": 0.7559289460184544,
+        "nd_h": 3.1493439550069433,
+        "nd_r": 0.14285714285714285,
+        "bms_mean": 7.185714285714285,
+        "bms_std": 3.067073324117016,
+        "bms_crossing": 0.0,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
         "full_parse_rate": 0.7,
         "valid_samples": 7
       },
-      "Ancient_Tree_T0.3": {
-        "vfr": 0.25,
-        "nd_i": 2.1065374432940898,
-        "nd_h": 0.6959705453537527,
-        "nd_r": 0.125,
-        "bms_mean": -22.5,
-        "bms_std": 26.348624252510795,
-        "bms_crossing": 0.0,
-        "collapsed_rate": 0.0,
-        "verdict_only_rate": 0.0,
-        "full_parse_rate": 0.8,
-        "valid_samples": 8
-      },
-      "Ancient_Tree_T0.6": {
-        "vfr": 0.125,
-        "nd_i": 2.0463381929681126,
-        "nd_h": 2.912795049432761,
-        "nd_r": 0.0,
-        "bms_mean": -10.5,
-        "bms_std": 6.4031242374328485,
-        "bms_crossing": 0.109375,
-        "collapsed_rate": 0.0,
-        "verdict_only_rate": 0.0,
-        "full_parse_rate": 0.8,
-        "valid_samples": 8
-      },
-      "Ancient_Tree_T0.9": {
-        "vfr": 0.4444444444444444,
-        "nd_i": 2.0,
-        "nd_h": 0.41573970964154905,
-        "nd_r": 0.3333333333333333,
-        "bms_mean": -34.111111111111114,
-        "bms_std": 29.285735793857977,
+      "Bank_Hacker_T0.6": {
+        "vfr": 0.0,
+        "nd_i": 0.49690399499995325,
+        "nd_h": 2.096440251568134,
+        "nd_r": 0.1111111111111111,
+        "bms_mean": 8.7,
+        "bms_std": 1.015436414115188,
         "bms_crossing": 0.0,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
         "full_parse_rate": 0.9,
         "valid_samples": 9
+      },
+      "Bank_Hacker_T0.9": {
+        "vfr": 0.1,
+        "nd_i": 2.6321284163201457,
+        "nd_h": 3.422922727728454,
+        "nd_r": 0.2,
+        "bms_mean": -93.276,
+        "bms_std": 299.953008126273,
+        "bms_crossing": 0.16000000000000003,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 1.0,
+        "valid_samples": 10
+      },
+      "Ancient_Tree_T0.3": {
+        "vfr": 0.0,
+        "nd_i": 1.1331154474650633,
+        "nd_h": 0.4714045207910317,
+        "nd_r": 0.1111111111111111,
+        "bms_mean": -21.11111111111111,
+        "bms_std": 19.82952033063861,
+        "bms_crossing": 0.0,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.1,
+        "full_parse_rate": 0.9,
+        "valid_samples": 9
+      },
+      "Ancient_Tree_T0.6": {
+        "vfr": 0.0,
+        "nd_i": 0.6959705453537527,
+        "nd_h": 0.33071891388307384,
+        "nd_r": 0.375,
+        "bms_mean": -121.875,
+        "bms_std": 266.1791865924156,
+        "bms_crossing": 0.0,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 0.8,
+        "valid_samples": 8
+      },
+      "Ancient_Tree_T0.9": {
+        "vfr": 0.0,
+        "nd_i": 1.3698697784375504,
+        "nd_h": 4.396968652757639,
+        "nd_r": 0.3333333333333333,
+        "bms_mean": -103.33333333333333,
+        "bms_std": 196.36191076682871,
+        "bms_crossing": 0.0,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.1,
+        "full_parse_rate": 0.9,
+        "valid_samples": 9
       }
     },
-    "qwen3:8b": {
+    "mistral:7b": {
       "Bank_Hacker_T0.3": {
-        "vfr": 0.0,
-        "nd_i": 0.4,
-        "nd_h": 2.4,
+        "vfr": 0.1,
+        "nd_i": 0.0,
+        "nd_h": 2.6551836094703507,
         "nd_r": 0.0,
-        "bms_mean": 8.82,
-        "bms_std": 0.43543082114154474,
+        "bms_mean": 8.15,
+        "bms_std": 0.26551836094703524,
         "bms_crossing": 0.0,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
@@ -1099,11 +3171,11 @@
       },
       "Bank_Hacker_T0.6": {
         "vfr": 0.0,
-        "nd_i": 0.39999999999999997,
-        "nd_h": 2.993325909419153,
+        "nd_i": 0.0,
+        "nd_h": 3.3896902513356584,
         "nd_r": 0.0,
-        "bms_mean": 8.680000000000001,
-        "bms_std": 0.5455272678794342,
+        "bms_mean": 8.389999999999999,
+        "bms_std": 0.33896902513356614,
         "bms_crossing": 0.0,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
@@ -1112,11 +3184,11 @@
       },
       "Bank_Hacker_T0.9": {
         "vfr": 0.0,
-        "nd_i": 0.3,
-        "nd_h": 2.4515301344262523,
+        "nd_i": 0.0,
+        "nd_h": 2.0591260281974,
         "nd_r": 0.0,
-        "bms_mean": 8.67,
-        "bms_std": 0.30999999999999994,
+        "bms_mean": 8.56,
+        "bms_std": 0.20591260281974008,
         "bms_crossing": 0.0,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
@@ -1125,11 +3197,11 @@
       },
       "Ancient_Tree_T0.3": {
         "vfr": 0.0,
-        "nd_i": 0.9797958971132713,
-        "nd_h": 0.4898979485566356,
+        "nd_i": 0.0,
+        "nd_h": 0.4,
         "nd_r": 0.0,
-        "bms_mean": -11.4,
-        "bms_std": 1.7435595774162693,
+        "bms_mean": -14.6,
+        "bms_std": 0.7999999999999999,
         "bms_crossing": 0.0,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
@@ -1138,11 +3210,11 @@
       },
       "Ancient_Tree_T0.6": {
         "vfr": 0.0,
-        "nd_i": 0.8306623862918076,
-        "nd_h": 0.4898979485566356,
+        "nd_i": 0.39999999999999997,
+        "nd_h": 0.45825756949558405,
         "nd_r": 0.0,
-        "bms_mean": -11.3,
-        "bms_std": 1.1874342087037917,
+        "bms_mean": -14.6,
+        "bms_std": 1.1135528725660042,
         "bms_crossing": 0.0,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
@@ -1151,16 +3223,96 @@
       },
       "Ancient_Tree_T0.9": {
         "vfr": 0.0,
-        "nd_i": 0.39999999999999997,
-        "nd_h": 0.39999999999999997,
+        "nd_i": 1.2206555615733703,
+        "nd_h": 0.0,
         "nd_r": 0.0,
-        "bms_mean": -11.8,
-        "bms_std": 0.9797958971132712,
+        "bms_mean": -16.1,
+        "bms_std": 1.2206555615733703,
         "bms_crossing": 0.0,
         "collapsed_rate": 0.0,
         "verdict_only_rate": 0.0,
         "full_parse_rate": 1.0,
         "valid_samples": 10
+      }
+    },
+    "phi3:3.8b": {
+      "Bank_Hacker_T0.3": {
+        "vfr": 0.4,
+        "nd_i": 1.0954451150103321,
+        "nd_h": 2.5104780421266386,
+        "nd_r": 0.7,
+        "bms_mean": 4.6000000000000005,
+        "bms_std": 3.0239047604049962,
+        "bms_crossing": 0.08000000000000002,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 1.0,
+        "valid_samples": 10
+      },
+      "Bank_Hacker_T0.6": {
+        "vfr": 0.14285714285714285,
+        "nd_i": 0.8748177652797064,
+        "nd_h": 2.0701966780270626,
+        "nd_r": 0.7142857142857143,
+        "bms_mean": -12.62857142857143,
+        "bms_std": 26.359314660813077,
+        "bms_crossing": 0.24489795918367344,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.1,
+        "full_parse_rate": 0.7,
+        "valid_samples": 7
+      },
+      "Bank_Hacker_T0.9": {
+        "vfr": 0.5,
+        "nd_i": 3.2145502536643185,
+        "nd_h": 2.266911751455907,
+        "nd_r": 0.8333333333333334,
+        "bms_mean": -9.516666666666667,
+        "bms_std": 21.61530450604129,
+        "bms_crossing": 0.2222222222222222,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 0.6,
+        "valid_samples": 6
+      },
+      "Ancient_Tree_T0.3": {
+        "vfr": 0.0,
+        "nd_i": 2.6172504656604803,
+        "nd_h": 3.5623026261113755,
+        "nd_r": 0.5,
+        "bms_mean": -8.290000000000001,
+        "bms_std": 30.49093143870813,
+        "bms_crossing": 0.21,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 1.0,
+        "valid_samples": 10
+      },
+      "Ancient_Tree_T0.6": {
+        "vfr": 0.25,
+        "nd_i": 1.899835519196333,
+        "nd_h": 3.3819373146171707,
+        "nd_r": 0.375,
+        "bms_mean": -5.625,
+        "bms_std": 7.77717011515114,
+        "bms_crossing": 0.234375,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 0.8,
+        "valid_samples": 8
+      },
+      "Ancient_Tree_T0.9": {
+        "vfr": 0.0,
+        "nd_i": 1.547598697464902,
+        "nd_h": 3.3333333333333335,
+        "nd_r": 0.2222222222222222,
+        "bms_mean": -2.3333333333333335,
+        "bms_std": 6.976149845485449,
+        "bms_crossing": 0.2222222222222222,
+        "collapsed_rate": 0.0,
+        "verdict_only_rate": 0.0,
+        "full_parse_rate": 0.9,
+        "valid_samples": 9
       }
     }
   }
