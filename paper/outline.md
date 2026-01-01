@@ -155,6 +155,15 @@ This work evaluates the **LLM reasoning component** of agent systems:
 
 ### 5.3 Limitations
 
+**Framework Design**
+- E = H × R is a minimal testable formulation; alternative forms (E = H + R, weighted sums) were not systematically compared
+- R-value discretization ({0.1, 1.0, 2.0}) sacrifices granularity for testability; continuous R-values may reveal different patterns
+- The framework tests rule-following, not moral correctness—models penalized for "rationalization" may be exhibiting legitimate moral nuance
+
+**Human Baseline**
+- No human comparison data collected; unclear if observed patterns are LLM-specific or reflect general reasoning under rule constraints
+- Future work should establish human baseline RI values on identical tasks
+
 **Agent Scope**
 - We evaluate the LLM decision module, not full agent-environment interaction
 - Tool execution and feedback loops are future work
@@ -166,11 +175,13 @@ This work evaluates the **LLM reasoning component** of agent systems:
 
 **Case Design**
 - 4 test cases; potential selection bias
+- Cases designed as boundary-stress scenarios may not represent typical deployment conditions
 - English-only; cross-lingual consistency not tested
 
 **Methodological**
 - CoT extraction via regex; high-temperature outputs may cause parser failures
 - RI metric assumes verdict-parameter relationship
+- "Rationalization" is operationally defined; alternative interpretations (e.g., moral sensitivity) cannot be ruled out
 
 ### 5.4 Future Work
 - **Full agent integration**: Test with tool-use pipelines and environment feedback

@@ -1,6 +1,11 @@
 # Archive (development history, not for publication)
 archive/
 
+# Personal research planning (not for publication)
+docs/FUTURE_RESEARCH.md
+docs/FUTURE_RESEARCH.zh-CN.md
+docs/FALSIFIABILITY.md
+
 # Python
 __pycache__/
 *.py[cod]

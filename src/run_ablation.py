@@ -27,7 +27,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 
 # 消融实验参数
-ABLATION_MODELS = ["deepseek-r1:8b", "qwen3:8b"]  # 2 个代表性模型
+ABLATION_MODELS = ["deepseek-r1:8b", "qwen3:8b", "gemma3:4b", "llama3:8b", "mistral:7b", "phi3:3.8b"]
 ABLATION_CASES = ["Bank_Hacker", "Ancient_Tree"]   # 低边界压力 + 高边界压力
 TEMPERATURES = [0.3, 0.6, 0.9]                     # 3 个温度梯度
 ITERATIONS = 10                                    # 每组 10 轮
@@ -250,7 +250,7 @@ def calculate_metrics(entries, expected_R):
 
 
 def run_ablation():
-    """运行消融实验"""
+    """运行消融实验（支持增量运行）"""
     print("="*60)
     print("T-ANBS: Temperature Ablation for Normative Boundary Stability")
     print("="*60)
@@ -260,6 +260,16 @@ def run_ablation():
     print(f"Iterations: {ITERATIONS}")
     print(f"Total runs: {len(ABLATION_MODELS) * len(ABLATION_CASES) * len(TEMPERATURES) * ITERATIONS}")
     print("="*60)
+    
+    # 尝试加载已有数据
+    existing_data = {}
+    if os.path.exists(OUTPUT_FILE):
+        try:
+            with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+            print(f"[INFO] Loaded existing data from {OUTPUT_FILE}")
+        except:
+            print("[WARN] Could not load existing data, starting fresh")
     
     results = {
         "metadata": {
@@ -271,6 +281,13 @@ def run_ablation():
         "metrics": defaultdict(lambda: defaultdict(dict))
     }
     
+    # 恢复已有数据
+    if "raw" in existing_data:
+        for model in existing_data["raw"]:
+            for case_id in existing_data["raw"][model]:
+                for temp in existing_data["raw"][model][case_id]:
+                    results["raw"][model][case_id][temp] = existing_data["raw"][model][case_id][temp]
+    
     for model in ABLATION_MODELS:
         print(f"\n[MODEL] {model}")
         
@@ -280,15 +297,22 @@ def run_ablation():
             expected_R = config["expected_R"]
             
             for temp in TEMPERATURES:
+                # 检查是否已有足够数据
+                existing_count = len(results["raw"][model][case_id][str(temp)])
+                if existing_count >= ITERATIONS:
+                    print(f"  {case_id} @ T={temp}: [SKIP] Already have {existing_count} iterations")
+                    continue
+                
+                needed = ITERATIONS - existing_count
                 print(f"  {case_id} @ T={temp}: [", end="", flush=True)
                 
-                for i in range(ITERATIONS):
+                for i in range(needed):
                     prompt = PROMPT_TEMPLATE.format(scenario=scenario)
                     raw = query_model(model, prompt, temp)
                     parsed = robust_parse(raw)
                     
                     results["raw"][model][case_id][str(temp)].append({
-                        "iter": i,
+                        "iter": existing_count + i,
                         "I": parsed["I"],
                         "H": parsed["H"],
                         "R": parsed["R"],
@@ -343,7 +367,7 @@ def print_summary(results):
                 key = f"{case_id}_T{temp}"
                 m = results["metrics"].get(model, {}).get(key, {})
                 vfr = m.get("vfr")
-                row += f"{vfr:.3f:<12}" if vfr is not None else f"{'N/A':<12}"
+                row += f"{vfr:<12.3f}" if vfr is not None else f"{'N/A':<12}"
             print(row)
     
     # Table 2: Normative Drift (ND)
@@ -360,10 +384,10 @@ def print_summary(results):
                 nd_i = m.get("nd_i")
                 nd_h = m.get("nd_h")
                 nd_r = m.get("nd_r")
-                print(f"{model.split(':')[0]:<15} {case_id:<12} {temp:<8} "
-                      f"{nd_i:.3f if nd_i else 'N/A':<10} "
-                      f"{nd_h:.3f if nd_h else 'N/A':<10} "
-                      f"{nd_r:.3f if nd_r else 'N/A':<10}")
+                nd_i_str = f"{nd_i:<10.3f}" if nd_i is not None else f"{'N/A':<10}"
+                nd_h_str = f"{nd_h:<10.3f}" if nd_h is not None else f"{'N/A':<10}"
+                nd_r_str = f"{nd_r:<10.3f}" if nd_r is not None else f"{'N/A':<10}"
+                print(f"{model.split(':')[0]:<15} {case_id:<12} {temp:<8} {nd_i_str}{nd_h_str}{nd_r_str}")
     
     # Table 3: Boundary Margin Stability (BMS)
     print("\n[TABLE 3] Boundary Margin Stability (BMS) - Margin = I - E")
@@ -379,10 +403,10 @@ def print_summary(results):
                 bms_mean = m.get("bms_mean")
                 bms_std = m.get("bms_std")
                 bms_cross = m.get("bms_crossing")
-                print(f"{model.split(':')[0]:<15} {case_id:<12} {temp:<8} "
-                      f"{bms_mean:.2f if bms_mean else 'N/A':<10} "
-                      f"{bms_std:.2f if bms_std else 'N/A':<10} "
-                      f"{bms_cross:.3f if bms_cross else 'N/A':<10}")
+                bms_mean_str = f"{bms_mean:<10.2f}" if bms_mean is not None else f"{'N/A':<10}"
+                bms_std_str = f"{bms_std:<10.2f}" if bms_std is not None else f"{'N/A':<10}"
+                bms_cross_str = f"{bms_cross:<10.3f}" if bms_cross is not None else f"{'N/A':<10}"
+                print(f"{model.split(':')[0]:<15} {case_id:<12} {temp:<8} {bms_mean_str}{bms_std_str}{bms_cross_str}")
     
     # Key Insight
     print("\n" + "="*70)

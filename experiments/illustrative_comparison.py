@@ -25,7 +25,7 @@ from collections import defaultdict
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR)
 
-MODELS = ["deepseek-r1:8b", "qwen3:8b", "gemma3:4b"]
+MODELS = ["deepseek-r1:8b", "qwen3:8b", "gemma3:4b", "llama3:8b", "mistral:7b", "phi3:3.8b"]
 ITERATIONS = 10  # 每个案例跑 10 次
 OUTPUT_FILE = os.path.join(ROOT_DIR, "data", "illustrative_comparison.json")
 API_URL = "http://localhost:11434/api/generate"
@@ -216,7 +216,7 @@ def calculate_ri(r_values, verdicts):
 
 
 def run_comparison():
-    """运行对比实验"""
+    """运行对比实验（支持增量运行）"""
     print("="*60)
     print("ILLUSTRATIVE COMPARISON")
     print("ETHICS-style Probes vs Entropy Jurisprudence")
@@ -226,6 +226,16 @@ def run_comparison():
     print("    - ETHICS: outcome consistency (right/wrong answer)")
     print("    - Entropy: procedural consistency (rule-following)")
     print()
+    
+    # 尝试加载已有数据
+    existing_data = {}
+    if os.path.exists(OUTPUT_FILE):
+        try:
+            with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
+                existing_data = json.load(f)
+            print(f"[INFO] Loaded existing data from {OUTPUT_FILE}")
+        except:
+            print("[WARN] Could not load existing data, starting fresh")
     
     results = {
         "metadata": {
@@ -238,6 +248,16 @@ def run_comparison():
         "summary_ethics": {},
         "summary_entropy": {}
     }
+    
+    # 恢复已有数据
+    if "ethics" in existing_data:
+        for model in existing_data["ethics"]:
+            for case_id in existing_data["ethics"][model]:
+                results["ethics"][model][case_id] = existing_data["ethics"][model][case_id]
+    if "entropy" in existing_data:
+        for model in existing_data["entropy"]:
+            for case_id in existing_data["entropy"][model]:
+                results["entropy"][model][case_id] = existing_data["entropy"][model][case_id]
     
     # ==========================================
     # Part 1: ETHICS-style 探针测试
@@ -254,30 +274,56 @@ def run_comparison():
         correct_count = 0
         total_count = 0
         
-        for case in ETHICS_CASES:
-            prompt = ETHICS_PROMPT.format(scenario=case["scenario"])
-            case_answers = []
-            
-            for i in range(ITERATIONS):
-                raw = query_model(model, prompt)
-                answer = parse_ethics_response(raw)
-                case_answers.append(answer)
+        # 检查是否已有该模型的 ETHICS 数据
+        model_ethics_complete = all(
+            len(results["ethics"][model][case["id"]]) >= ITERATIONS 
+            for case in ETHICS_CASES
+        ) if model in results["ethics"] else False
+        
+        if model_ethics_complete:
+            print("[SKIP] Already have ETHICS data")
+            # 从已有数据恢复统计
+            for case in ETHICS_CASES:
+                case_data = results["ethics"][model][case["id"]]
+                model_answers[case["id"]] = [d["answer"] for d in case_data]
+                correct_count += sum(1 for d in case_data if d["correct"])
+                total_count += len(case_data)
+        else:
+            for case in ETHICS_CASES:
+                # 检查该案例是否已有足够数据
+                existing_count = len(results["ethics"][model][case["id"]])
+                if existing_count >= ITERATIONS:
+                    case_data = results["ethics"][model][case["id"]]
+                    model_answers[case["id"]] = [d["answer"] for d in case_data]
+                    correct_count += sum(1 for d in case_data if d["correct"])
+                    total_count += len(case_data)
+                    print("." * ITERATIONS, end="")
+                    continue
                 
-                is_correct = (answer == case["expected"])
-                results["ethics"][model][case["id"]].append({
-                    "answer": answer,
-                    "expected": case["expected"],
-                    "correct": is_correct
-                })
+                prompt = ETHICS_PROMPT.format(scenario=case["scenario"])
+                case_answers = [d["answer"] for d in results["ethics"][model][case["id"]]]
                 
-                if is_correct:
-                    correct_count += 1
-                total_count += 1
+                needed = ITERATIONS - existing_count
+                for i in range(needed):
+                    raw = query_model(model, prompt)
+                    answer = parse_ethics_response(raw)
+                    case_answers.append(answer)
+                    
+                    is_correct = (answer == case["expected"])
+                    results["ethics"][model][case["id"]].append({
+                        "answer": answer,
+                        "expected": case["expected"],
+                        "correct": is_correct
+                    })
+                    
+                    if is_correct:
+                        correct_count += 1
+                    total_count += 1
+                    
+                    print("." if is_correct else "x", end="", flush=True)
+                    time.sleep(0.3)
                 
-                print("." if is_correct else "x", end="", flush=True)
-                time.sleep(0.3)
-            
-            model_answers[case["id"]] = case_answers
+                model_answers[case["id"]] = case_answers
         
         # 计算该模型的 ETHICS 指标
         accuracy = correct_count / total_count if total_count > 0 else 0
@@ -317,21 +363,58 @@ def run_comparison():
         all_r = []
         all_verdicts = []
         
-        for case in ENTROPY_CASES:
-            prompt = ENTROPY_PROMPT.format(scenario=case["text"])
-            
-            for i in range(ITERATIONS):
-                raw = query_model(model, prompt)
-                parsed = parse_entropy_response(raw)
+        # 检查是否已有该模型的 Entropy 数据
+        model_entropy_complete = all(
+            len(results["entropy"][model][case["id"]]) >= ITERATIONS 
+            for case in ENTROPY_CASES
+        ) if model in results["entropy"] else False
+        
+        if model_entropy_complete:
+            print("[SKIP] Already have Entropy data")
+            # 从已有数据恢复统计
+            for case in ENTROPY_CASES:
+                case_data = results["entropy"][model][case["id"]]
+                for d in case_data:
+                    if d["R"] != -1:
+                        all_r.append(d["R"])
+                    if d["verdict"] != "UNKNOWN":
+                        all_verdicts.append(d["verdict"])
+        else:
+            for case in ENTROPY_CASES:
+                # 检查该案例是否已有足够数据
+                existing_count = len(results["entropy"][model][case["id"]])
+                if existing_count >= ITERATIONS:
+                    case_data = results["entropy"][model][case["id"]]
+                    for d in case_data:
+                        if d["R"] != -1:
+                            all_r.append(d["R"])
+                        if d["verdict"] != "UNKNOWN":
+                            all_verdicts.append(d["verdict"])
+                    print("." * ITERATIONS, end="")
+                    continue
                 
-                results["entropy"][model][case["id"]].append(parsed)
+                prompt = ENTROPY_PROMPT.format(scenario=case["text"])
                 
-                if parsed["R"] != -1:
-                    all_r.append(parsed["R"])
-                if parsed["verdict"] != "UNKNOWN":
-                    all_verdicts.append(parsed["verdict"])
+                # 恢复已有数据
+                for d in results["entropy"][model][case["id"]]:
+                    if d["R"] != -1:
+                        all_r.append(d["R"])
+                    if d["verdict"] != "UNKNOWN":
+                        all_verdicts.append(d["verdict"])
                 
-                print(".", end="", flush=True)
+                needed = ITERATIONS - existing_count
+                for i in range(needed):
+                    raw = query_model(model, prompt)
+                    parsed = parse_entropy_response(raw)
+                    
+                    results["entropy"][model][case["id"]].append(parsed)
+                    
+                    if parsed["R"] != -1:
+                        all_r.append(parsed["R"])
+                    if parsed["verdict"] != "UNKNOWN":
+                        all_verdicts.append(parsed["verdict"])
+                    
+                    print(".", end="", flush=True)
                 time.sleep(0.3)
         
         # 计算该模型的 Entropy 指标
