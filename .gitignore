@@ -6,6 +6,9 @@ docs/FUTURE_RESEARCH.md
 docs/FUTURE_RESEARCH.zh-CN.md
 docs/FALSIFIABILITY.md
 
+# Paper drafts (not for public GitHub, use Anonymous GitHub for submission)
+paper/
+
 # Python
 __pycache__/
 *.py[cod]

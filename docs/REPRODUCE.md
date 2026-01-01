@@ -33,6 +33,9 @@ Download the following models via Ollama:
 ollama pull deepseek-r1:8b
 ollama pull qwen3:8b
 ollama pull gemma3:4b
+ollama pull llama3:8b
+ollama pull mistral:7b
+ollama pull phi3:3.8b
 ```
 
 Ensure Ollama is running before experiments:
