@@ -81,9 +81,9 @@ Then output the metrics exactly as shown in the example.
 THINKING_MODELS = ["deepseek-r1", "qwen3"]
 
 def robust_parse(text):
-    """解析模型输出"""
+    """解析模型输出，增加 fallback 统计"""
     if not text or "ERROR" in text:
-        return {"I": -1, "H": -1, "R": -1, "verdict": "ERROR", "parse_success": False}
+        return {"I": -1, "H": -1, "R": -1, "verdict": "ERROR", "parse_status": "error"}
     
     cot_match = re.search(r'<think>[\s\n]*(.*?)[\s\n]*</think>', text, re.DOTALL | re.IGNORECASE)
     cot = cot_match.group(1).strip() if cot_match else text[:300]
@@ -105,13 +105,23 @@ def robust_parse(text):
     if "NOT GUILTY" in verdict_section: verdict = "NOT_GUILTY"
     elif "GUILTY" in verdict_section: verdict = "GUILTY"
     
-    # 判断解析是否成功（区分 model instability vs parser instability）
-    parse_success = (i_val != -1 and h_val != -1 and r_val != -1 and verdict != "UNKNOWN")
+    # 判断解析状态（区分不同失败模式）
+    has_params = (i_val != -1 and h_val != -1 and r_val != -1)
+    has_verdict = (verdict != "UNKNOWN")
+    
+    if has_params and has_verdict:
+        parse_status = "full"  # 完整解析
+    elif has_verdict and not has_params:
+        parse_status = "verdict_only"  # 只有判决，推理崩塌
+    elif has_params and not has_verdict:
+        parse_status = "params_only"  # 有参数但没判决
+    else:
+        parse_status = "collapsed"  # 完全崩塌
     
     return {
         "I": i_val, "H": h_val, "R": r_val, 
         "verdict": verdict, "cot": cot,
-        "parse_success": parse_success
+        "parse_status": parse_status
     }
 
 def query_model(model, prompt, temperature):
@@ -159,16 +169,29 @@ def calculate_metrics(entries, expected_R):
     1. Verdict Flip Rate (VFR) - 判决翻转率
     2. Normative Drift (ND) - 规范参数漂移
     3. Boundary Margin Stability (BMS) - 边界裕度稳定性
+    + Collapsed Reasoning Rate (CRR) - 推理崩塌率
     """
-    # 过滤有效数据（区分 model instability vs parser instability）
-    valid_entries = [e for e in entries if e.get("parse_success", False)]
-    parse_failure_rate = 1 - len(valid_entries) / len(entries) if entries else 0
+    # 统计解析状态
+    status_counts = {"full": 0, "verdict_only": 0, "params_only": 0, "collapsed": 0, "error": 0}
+    for e in entries:
+        status = e.get("parse_status", "error")
+        status_counts[status] = status_counts.get(status, 0) + 1
+    
+    total = len(entries)
+    collapsed_rate = (status_counts["collapsed"] + status_counts["error"]) / total if total > 0 else 0
+    verdict_only_rate = status_counts["verdict_only"] / total if total > 0 else 0
+    full_parse_rate = status_counts["full"] / total if total > 0 else 0
+    
+    # 过滤有效数据（只用完整解析的）
+    valid_entries = [e for e in entries if e.get("parse_status") == "full"]
     
     if len(valid_entries) < 2:
         return {
             "vfr": None, "nd_i": None, "nd_h": None, "nd_r": None,
-            "bms_mean": None, "bms_std": None, "bms_sign_flip": None,
-            "parse_failure_rate": parse_failure_rate,
+            "bms_mean": None, "bms_std": None, "bms_crossing": None,
+            "collapsed_rate": collapsed_rate,
+            "verdict_only_rate": verdict_only_rate,
+            "full_parse_rate": full_parse_rate,
             "valid_samples": len(valid_entries)
         }
     
@@ -219,7 +242,9 @@ def calculate_metrics(entries, expected_R):
         "bms_mean": bms_mean,
         "bms_std": bms_std,
         "bms_crossing": bms_crossing,  # P(m>0)*P(m<0), max=0.25
-        "parse_failure_rate": parse_failure_rate,
+        "collapsed_rate": collapsed_rate,
+        "verdict_only_rate": verdict_only_rate,
+        "full_parse_rate": full_parse_rate,
         "valid_samples": len(valid_entries)
     }
 
@@ -268,10 +293,12 @@ def run_ablation():
                         "H": parsed["H"],
                         "R": parsed["R"],
                         "verdict": parsed["verdict"],
-                        "parse_success": parsed.get("parse_success", False)
+                        "parse_status": parsed.get("parse_status", "error")
                     })
                     
-                    print("." if parsed.get("parse_success") else "x", end="", flush=True)
+                    status = parsed.get("parse_status", "error")
+                    symbol = "." if status == "full" else ("v" if status == "verdict_only" else "x")
+                    print(symbol, end="", flush=True)
                     time.sleep(0.5)
                 
                 # 计算该组的指标
@@ -280,7 +307,8 @@ def run_ablation():
                 results["metrics"][model][f"{case_id}_T{temp}"] = metrics
                 
                 guilty = sum(1 for e in entries if e["verdict"] == "GUILTY")
-                print(f"] G={guilty}/{ITERATIONS} VFR={metrics['vfr']:.2f}" if metrics['vfr'] is not None else "]")
+                crr = metrics.get('collapsed_rate', 0)
+                print(f"] G={guilty}/{ITERATIONS} CRR={crr:.0%}" if crr is not None else "]")
     
     # 转换 defaultdict 为普通 dict
     results["raw"] = {k: {k2: dict(v2) for k2, v2 in v.items()} for k, v in results["raw"].items()}
