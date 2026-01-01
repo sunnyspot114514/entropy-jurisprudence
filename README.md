@@ -1,6 +1,5 @@
 # Entropy Jurisprudence
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18098842.svg)](https://doi.org/10.5281/zenodo.18098842)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
@@ -361,8 +360,7 @@ If you use this framework or data in academic work, please cite:
 
 ```
 Anonymous. (2025). Entropy Jurisprudence: A Mathematical Framework for Evaluating 
-Moral Reasoning Stability in Large Language Models. Zenodo. 
-https://doi.org/10.5281/zenodo.18098842
+Moral Reasoning Stability in Large Language Models.
 ```
 
 A preprint version of the paper is forthcoming.
@@ -373,10 +371,7 @@ A preprint version of the paper is forthcoming.
 @software{anonymous2025entropy,
   author       = {Anonymous},
   title        = {Entropy Jurisprudence: A Mathematical Framework for Evaluating Moral Reasoning Stability in Large Language Models},
-  year         = {2025},
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.18098842},
-  url          = {https://doi.org/10.5281/zenodo.18098842}
+  year         = {2025}
 }
 ```
 

@@ -4,7 +4,6 @@ message: "If you use this framework, please cite it as below."
 authors:
   - name: Anonymous
 year: 2025
-doi: 10.5281/zenodo.18098842
 license: MIT
 type: software
 keywords:
