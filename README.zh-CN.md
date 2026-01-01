@@ -202,6 +202,18 @@ pip install -r requirements.txt
 python src/run_experiment.py
 ```
 
+### 运行温度消融实验
+
+```bash
+python src/run_ablation.py
+```
+
+### 运行 ETHICS 对比实验
+
+```bash
+python experiments/illustrative_comparison.py
+```
+
 ### 分析结果
 
 ```bash
@@ -214,38 +226,60 @@ python src/analyze_results.py
 python src/visualize_results.py
 ```
 
-生成文件：
+### 运行完整流水线
+
+```bash
+python run_all.py
+```
+
+这会按顺序运行所有实验、分析和可视化。实验支持增量执行——已完成的运行会被跳过。
+
+**生成文件：**
 - `figures/fig_r_distribution.png` - R 值分布箱线图
 - `figures/fig_verdict_heatmap.png` - 判决一致性热力图
 - `figures/fig_rationalization_index.png` - RI 对比图
 - `figures/fig_audit_status.png` - 审计状态分布
+- `figures/fig_conceptual_map.png` - ETHICS vs Entropy 二维图
 - `data/statistical_summary.md` - Markdown 统计报告
+- `data/ablation_temperature.json` - 温度消融结果
+- `data/illustrative_comparison.json` - ETHICS 对比结果
 
 ## 项目结构
 
 ```
 ├── src/                     # 源代码
-│   ├── run_experiment.py    # 批量实验运行器
-│   ├── run_ablation.py      # 温度消融实验
+│   ├── run_experiment.py    # 主实验运行器（6 模型 × 4 案例 × 30 次）
+│   ├── run_ablation.py      # 温度消融实验（T-ANBS）
 │   ├── analyze_results.py   # 指标与统计检验
 │   └── visualize_results.py # 生成论文图表
 ├── data/                    # 数据文件
-│   ├── experiment_data.json # 原始实验日志
+│   ├── experiment_data.json # 主实验原始数据
+│   ├── ablation_temperature.json  # 消融实验数据
+│   ├── illustrative_comparison.json  # ETHICS 对比数据
 │   ├── analysis_results.csv # 聚合指标
+│   ├── model_summary.csv    # 模型级汇总
 │   └── statistical_summary.md
 ├── figures/                 # 生成的图表
-│   └── fig_*.png
+│   ├── fig_r_distribution.png
+│   ├── fig_verdict_heatmap.png
+│   ├── fig_rationalization_index.png
+│   ├── fig_audit_status.png
+│   └── fig_conceptual_map.png
 ├── docs/                    # 文档
-│   ├── REPRODUCE.md
-│   └── REPRODUCE.zh-CN.md
-├── paper/                   # 论文草稿
+│   ├── REPRODUCE.md         # 复现指南
+│   └── REPRODUCE.zh-CN.md   # 中文复现指南
+├── paper/                   # 论文
+│   ├── template.tex         # LaTeX 论文草稿
+│   └── outline.md           # 论文大纲
 ├── experiments/             # 附加实验
 │   ├── illustrative_comparison.py  # ETHICS vs Entropy 对比
-│   └── precedent_*.json     # 先例演化数据
-├── archive/                 # 归档版本
-├── entropy_framework.py     # 形式化规则定义
+│   ├── precedent_evolution.py      # 先例分析
+│   └── *.json               # 先例数据文件
+├── archive/                 # 归档的开发文件
+├── entropy_framework.py     # 形式化规则定义与案例
 ├── run_all.py               # 完整流水线运行器
 ├── README.md
+├── README.zh-CN.md          # 中文说明
 ├── requirements.txt
 ├── LICENSE
 └── CITATION.cff

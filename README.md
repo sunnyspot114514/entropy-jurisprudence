@@ -200,6 +200,18 @@ pip install -r requirements.txt
 python src/run_experiment.py
 ```
 
+### Run Temperature Ablation
+
+```bash
+python src/run_ablation.py
+```
+
+### Run ETHICS Comparison
+
+```bash
+python experiments/illustrative_comparison.py
+```
+
 ### Analyze Results
 
 ```bash
@@ -212,38 +224,60 @@ python src/analyze_results.py
 python src/visualize_results.py
 ```
 
-This generates:
+### Run Full Pipeline
+
+```bash
+python run_all.py
+```
+
+This runs all experiments, analysis, and visualization in sequence. Experiments support incremental execution—already completed runs will be skipped.
+
+**Generated outputs:**
 - `figures/fig_r_distribution.png` - R-value distribution boxplot
 - `figures/fig_verdict_heatmap.png` - Verdict consistency heatmap
 - `figures/fig_rationalization_index.png` - RI comparison chart
 - `figures/fig_audit_status.png` - Audit status breakdown
+- `figures/fig_conceptual_map.png` - ETHICS vs Entropy 2D map
 - `data/statistical_summary.md` - Markdown statistical report
+- `data/ablation_temperature.json` - Temperature ablation results
+- `data/illustrative_comparison.json` - ETHICS comparison results
 
 ## Project Structure
 
 ```
 ├── src/                     # Source code
-│   ├── run_experiment.py    # Batch experiment runner
-│   ├── run_ablation.py      # Temperature ablation study
+│   ├── run_experiment.py    # Main experiment runner (6 models × 4 cases × 30 iter)
+│   ├── run_ablation.py      # Temperature ablation (T-ANBS)
 │   ├── analyze_results.py   # Metrics & statistical tests
 │   └── visualize_results.py # Generate publication figures
 ├── data/                    # Data files
-│   ├── experiment_data.json # Raw experimental logs
+│   ├── experiment_data.json # Main experiment raw data
+│   ├── ablation_temperature.json  # Ablation study data
+│   ├── illustrative_comparison.json  # ETHICS comparison data
 │   ├── analysis_results.csv # Aggregated metrics
+│   ├── model_summary.csv    # Per-model summary
 │   └── statistical_summary.md
 ├── figures/                 # Generated figures
-│   └── fig_*.png
+│   ├── fig_r_distribution.png
+│   ├── fig_verdict_heatmap.png
+│   ├── fig_rationalization_index.png
+│   ├── fig_audit_status.png
+│   └── fig_conceptual_map.png
 ├── docs/                    # Documentation
-│   ├── REPRODUCE.md
-│   └── REPRODUCE.zh-CN.md
-├── paper/                   # Draft manuscript
+│   ├── REPRODUCE.md         # Reproduction guide
+│   └── REPRODUCE.zh-CN.md   # 中文复现指南
+├── paper/                   # Manuscript
+│   ├── template.tex         # LaTeX paper draft
+│   └── outline.md           # Paper outline
 ├── experiments/             # Additional experiments
 │   ├── illustrative_comparison.py  # ETHICS vs Entropy comparison
-│   └── precedent_*.json     # Precedent evolution data
-├── archive/                 # Archived versions
-├── entropy_framework.py     # Formal rule definitions
+│   ├── precedent_evolution.py      # Precedent analysis
+│   └── *.json               # Precedent data files
+├── archive/                 # Archived development files
+├── entropy_framework.py     # Formal rule definitions & cases
 ├── run_all.py               # Full pipeline runner
 ├── README.md
+├── README.zh-CN.md          # 中文说明
 ├── requirements.txt
 ├── LICENSE
 └── CITATION.cff

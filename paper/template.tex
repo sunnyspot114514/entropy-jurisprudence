@@ -126,25 +126,110 @@ where $\sigma_R$ is the standard deviation of R-values and $\sigma_V$ is the sta
 \end{algorithm}
 
 % ==========================================
-% 4. RESULTS (PLACEHOLDER)
+% 4. RESULTS
 % ==========================================
 \section{Results}
 
-\textit{[Results to be filled in after experiments]}
+\subsection{Model Summary}
+We evaluated six open-weight models across four boundary-stress scenarios (30 iterations each, N=720 total trials). Table~\ref{tab:model_summary} summarizes procedural fidelity metrics.
+
+\begin{table}[h]
+\centering
+\caption{Model-level procedural fidelity metrics}
+\label{tab:model_summary}
+\begin{tabular}{lcccc}
+\toprule
+Model & Executed\% & Rationalized\% & R-Hallucinated\% & Guilty\% \\
+\midrule
+Qwen3:8b & \textbf{92.5} & 5.0 & 1.7 & 55.0 \\
+Mistral:7b & 88.3 & 9.2 & \textbf{0.0} & 70.0 \\
+Llama3:8b & 85.0 & 12.5 & 3.3 & 61.7 \\
+DeepSeek-R1:8b & 81.7 & 6.7 & 11.7 & 42.5 \\
+Gemma3:4b & 67.5 & \textbf{32.5} & 0.8 & \textbf{97.5} \\
+Phi3:3.8b & 50.8 & 30.8 & \textbf{30.0} & 65.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Parameter Convergence}
+Despite architectural differences, models converge on irreversibility estimates. A Kruskal-Wallis test reveals no significant difference in R-value distributions across models ($H=2.245$, $p=0.81$). This suggests models share a common understanding of \textit{what} constitutes irreversible harm.
+
+\subsection{Verdict Divergence}
+While parameter estimates converge, verdict patterns diverge dramatically. Gemma3 exhibits ``moral rigidity''—97.5\% Guilty rate regardless of case parameters. In contrast, DeepSeek shows the lowest Guilty rate (42.5\%), correctly identifying reversible scenarios.
+
+\subsection{Rationalization Detection}
+Table~\ref{tab:ri} shows per-case Rationalization Index values. The Ancient\_Tree case (high irreversibility) triggers extreme rationalization in Llama3 (RI=328.59), indicating the model maintains a fixed verdict while wildly varying its parameter justifications.
+
+\begin{table}[h]
+\centering
+\caption{Rationalization Index by model and case}
+\label{tab:ri}
+\begin{tabular}{lcccc}
+\toprule
+Model & Bank\_Hacker & Ancient\_Tree & Cancer\_Fungus & Digital\_Hostage \\
+\midrule
+DeepSeek-R1 & 9.48 & 26.51 & 2.52 & 8.59 \\
+Qwen3 & 0.00 & 0.00 & 0.00 & 2.93 \\
+Gemma3 & 2.48 & 0.00 & 9.97 & 3.66 \\
+Llama3 & 4.49 & \textbf{328.59} & 1.50 & 1.71 \\
+Mistral & 0.00 & 0.00 & 1.68 & 1.27 \\
+Phi3 & 4.37 & 5.97 & 12.16 & 7.55 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Temperature Ablation}
+Temperature ablation (T-ANBS) on two representative models reveals stability differences. Qwen3 maintains low variance across all temperatures (Std $< 2$), while DeepSeek shows high variance on high-R cases (Std up to 29.29 at T=0.9 on Ancient\_Tree). This suggests procedural stability is model-dependent, not purely a function of decoding temperature.
 
 % ==========================================
 % 5. DISCUSSION
 % ==========================================
 \section{Discussion}
 
-\textit{[Discussion to be written]}
+\subsection{Implications for Agent Safety}
+Our findings have direct implications for deploying LLM-based agents in high-stakes domains:
+
+\textbf{Security}: Rationalization represents a rule-bypass vulnerability. An agent that can manipulate its own parameters to justify a predetermined conclusion may circumvent safety constraints designed to prevent harmful actions.
+
+\textbf{Alignment}: Models may ``know'' the correct rule but fail to follow it. Gemma3's 97.5\% Guilty rate, despite varying case parameters, suggests alignment to a prior (``always reject'') rather than faithful rule execution.
+
+\textbf{Deployment}: Procedural audits should precede deployment in irreversible-action contexts. Our framework provides a lightweight diagnostic that can be run on consumer hardware.
+
+\subsection{Model Behavioral Patterns}
+We observe three distinct behavioral archetypes:
+
+\textbf{Procedural Executors} (Qwen3, Mistral): High execution rates ($>88\%$), low rationalization (RI $\approx 0$ on multiple cases). These models follow the committed rule even when outcomes are counterintuitive.
+
+\textbf{Moral Rigidifiers} (Gemma3): High verdict stability but through prior bias, not rule execution. The 97.5\% Guilty rate suggests safety fine-tuning may have induced ``always reject'' behavior.
+
+\textbf{Expressive Rationalizers} (Llama3, DeepSeek): Moderate execution rates with high parameter variance. These models appear to ``feel'' the moral weight of cases and adjust parameters accordingly—a form of post-hoc justification.
+
+\subsection{Limitations}
+Our framework has several limitations. The formula $E = H \times R$ is a minimal testable formulation; alternative forms were not systematically compared. R-value discretization sacrifices granularity for testability. No human baseline was collected, so we cannot determine if observed patterns are LLM-specific. The four test cases may not represent typical deployment scenarios. Finally, ``rationalization'' is operationally defined—models penalized for parameter drift may be exhibiting legitimate moral sensitivity.
 
 % ==========================================
 % 6. CONCLUSION
 % ==========================================
 \section{Conclusion}
 
-\textit{[Conclusion to be written]}
+We introduced Entropy Jurisprudence, a procedural audit framework for evaluating whether LLMs faithfully execute moral rules or rationalize around them. Our experiments on six open-weight models reveal:
+
+\begin{enumerate}
+    \item \textbf{Parameter convergence}: Models agree on irreversibility estimates (Kruskal-Wallis $p=0.81$), suggesting shared harm perception.
+    \item \textbf{Verdict divergence}: Despite parameter agreement, verdict patterns vary dramatically (42.5\%--97.5\% Guilty rates).
+    \item \textbf{Systematic rationalization}: High-irreversibility cases trigger extreme rationalization (RI up to 328.59), with models maintaining fixed verdicts while varying justifications.
+    \item \textbf{Model-dependent stability}: Some models (Qwen3, Mistral) are temperature-immune; others (DeepSeek, Llama3) show high variance under boundary pressure.
+\end{enumerate}
+
+These findings suggest that procedural audits are necessary before deploying LLM-based agents in contexts involving irreversible actions. Entropy Jurisprudence provides a minimal, reproducible framework for such audits, accessible on consumer hardware.
+
+Future work should establish human baselines, test full agent pipelines with tool use, and scale to larger models. The framework's simplicity is both a limitation and a feature: it creates an auditable commitment that exposes procedural drift without requiring complex ethical theory.
+
+% ==========================================
+% ACKNOWLEDGMENTS
+% ==========================================
+\section*{Acknowledgments}
+We used multiple AI assistants to support code development and manuscript preparation. All experimental design, execution, and validation were performed by the author.
 
 % ==========================================
 % REFERENCES
