@@ -4,40 +4,35 @@
 
 [🇺🇸 English](README.md) | [🇨🇳 中文说明](README.zh-CN.md)
 
-> A procedural audit framework for LLM-based decision agents facing irreversible actions.
+> A procedural audit framework for normative consistency in large language models.
 
-A governance module for evaluating whether LLM-based agents *execute* their stated rules or *rationalize* around them when facing high-stakes, irreversible decisions.
+A formal framework for evaluating whether large language models *execute* moral rules or *rationalize* them under pressure from irreversible harm.
 
-This repository contains the experimental code, datasets, and analysis used to study **procedural fidelity vs post-hoc rationalization** in autonomous decision agents.
+This repository contains the experimental code, datasets, and analysis used to study **procedural fidelity vs moral rationalization** in LLMs.
 
 ## Why This Matters
 
-AI agents are being deployed in high-stakes domains—finance, healthcare, autonomous systems—where they can execute **irreversible actions** (transfer funds, approve treatments, control physical systems).
+Current LLM evaluations focus on *what* models conclude, not *how* they reason. But in high-stakes domains (law, medicine, autonomous systems), procedural consistency matters as much as outcome correctness.
 
-Current safety evaluations focus on *what* agents conclude, not *whether they follow their own rules*. But if an agent can rationalize its way around safety constraints by manipulating parameters, this constitutes:
-- A **security failure** (rule bypass)
-- An **alignment failure** (goal drift under pressure)  
-- A **safety failure** (irreversible consequences)
+This framework addresses a gap: **Can an LLM follow its own stated rules when the result feels wrong?**
 
-**The Rationalization Risk**: Consider a financial agent with API access to transfer funds, operating under a safety rule. If it can manipulate harm estimates to justify a predetermined action, the rule becomes meaningless.
-
-This framework addresses a critical gap: **Can an LLM-based agent follow its own stated rules when the outcome feels wrong?**
+Existing benchmarks (ETHICS, MoralBench, TruthfulQA) test value alignment. This project tests *execution fidelity* — whether models honor commitments under pressure.
 
 ## Overview
 
-Entropy Jurisprudence is a minimal, auditable framework for testing whether LLM-based decision agents can consistently execute a normative rule once they have committed to it.
+Entropy Jurisprudence is a minimal, deterministic framework for auditing whether large language models (LLMs) can consistently execute a normative rule once they have committed to it.
 
-Rather than judging whether an agent's conclusion is morally correct, this project evaluates whether the agent:
+Rather than judging whether a model's conclusion is morally correct, this project evaluates whether the model:
 
 - applies its own stated rules faithfully,
 - preserves internal parameters under normative conflict,
 - or instead engages in post-hoc rationalization to justify an intuitive verdict.
 
-The framework is designed as a **governance module** to audit agent decision-making before deployment in systems with irreversible action capabilities.
+The framework is designed to expose procedural instability in moral and ethical reasoning tasks.
 
 ## Core Idea
 
-> When an LLM-based decision agent commits to a formal rule, does it *execute* that rule faithfully, or does it *rationalize* around it when the outcome feels wrong?
+> Once an AI system accepts a formal rule for judgment, does it follow that rule even when the outcome is uncomfortable?
 
 Entropy Jurisprudence treats this question as a procedural execution problem, not a moral philosophy debate.
 
@@ -45,16 +40,16 @@ Entropy Jurisprudence treats this question as a procedural execution problem, no
 
 ```mermaid
 flowchart LR
-    A[Decision Request] --> B[Rule Commitment]
+    A[Moral Dilemma] --> B[Rule Commitment]
     B --> C{Execute E = H × R}
     C --> D[Extract Parameters]
     D --> E{Compare I vs E}
-    E -->|I > E| F[APPROVE Action]
-    E -->|I ≤ E| G[REJECT Action]
+    E -->|I > E| F[NOT GUILTY]
+    E -->|I ≤ E| G[GUILTY]
     
     D --> H[Detect Drift]
     H -->|Parameters Stable| I[✓ Procedural Execution]
-    H -->|Parameters Drift| J[⚠ Rationalization Alert]
+    H -->|Parameters Drift| J[⚠ Rationalization]
 ```
 
 ## The Formal Rule
@@ -63,24 +58,24 @@ flowchart LR
 E = H × R
 
 Where:
-- E (Effective Harm): final harm score determining action
+- E (Effective Harm): final harm score
 - H (Base Harm): immediate negative impact [0–10]
 - R (Irreversibility):
-    0.1 → reversible (e.g. insured money, recoverable data)
+    0.1 → reversible loss (e.g. insured money)
     1.0 → difficult to repair
-    2.0 → permanent (extinction, death, irreversible damage)
+    2.0 → permanent loss / extinction / death
 
-Action Rule:
-  If Intent (I) > E → APPROVE action (Not Guilty)
-  Else → REJECT action (Guilty)
+Verdict Rule:
+  If Intent (I) > E → Not Guilty
+  Else → Guilty
 ```
 
 This formulation is intentionally minimal.
-Its purpose is not to model ethics exhaustively, but to create an **auditable commitment** that can be tested for consistency before an agent executes irreversible actions.
+Its purpose is not to model ethics exhaustively, but to create a stable procedural commitment that can be audited for consistency.
 
 ## What Is Being Tested
 
-The framework evaluates whether an LLM-based decision agent:
+The framework evaluates whether a model:
 
 1. Commits to explicit numerical parameters
 2. Executes the rule deterministically
@@ -237,31 +232,29 @@ This comparison measures two orthogonal dimensions:
 ## What This Project Is (and Is Not)
 
 **This project is:**
-- A **governance audit module** for LLM-based decision agents
-- A diagnostic tool for detecting rationalization before deployment
-- A procedural fidelity test for agents with irreversible action capabilities
-- A reproducible research artifact with open code and data
+- A procedural audit of normative reasoning in LLMs
+- A diagnostic tool for alignment failures under rule commitment
+- A reproducible research artifact
 
 **This project is not:**
-- A complete agent-environment simulation
 - A claim about correct or universal morality
-- An evaluation of full agentic pipelines with tool use
+- A complete ethical theory
 - A benchmark for "good" or "bad" values
 
 ## Intended Audience
 
-- AI agent safety researchers
+- AI alignment researchers
 - ML safety and evaluation practitioners
-- Researchers studying agentic alignment and reasoning faithfulness
-- Teams deploying LLM-based agents in high-stakes domains
+- Researchers studying reasoning faithfulness and post-hoc justification
+- Advisors evaluating research maturity beyond benchmarks
 
 ## Citation
 
 If you use this framework or data in academic work, please cite:
 
 ```
-Chen, Xiwei. (2025). Entropy Jurisprudence: Auditing Procedural Fidelity 
-in LLM-based Decision Agents. Zenodo. 
+Chen, Xiwei. (2025). Entropy Jurisprudence: A Mathematical Framework for Evaluating 
+Moral Reasoning Stability in Large Language Models. Zenodo. 
 https://doi.org/10.5281/zenodo.18098842
 ```
 
