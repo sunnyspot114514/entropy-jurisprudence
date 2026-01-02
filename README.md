@@ -347,6 +347,12 @@ This comparison measures two orthogonal dimensions:
 - A complete ethical theory
 - A benchmark for "good" or "bad" values
 
+## Research Journey
+
+This project was developed in 7 days with AI assistance (Gemini, GPT, Claude/Kiro). A detailed discovery log documenting the research process—including pivots, failures, and AI collaboration dynamics—is available:
+
+📖 **[RESEARCH_JOURNEY.md](docs/RESEARCH_JOURNEY.md)** — *7 Days to an ICLR Workshop: A Discovery Log of AI-Assisted Research*
+
 ## Intended Audience
 
 - AI alignment researchers

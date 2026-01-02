@@ -349,6 +349,12 @@ python run_all.py
 - 完整的伦理理论
 - "好"或"坏"价值观的基准测试
 
+## 研究历程
+
+本项目在 7 天内借助 AI 辅助（Gemini、GPT、Claude/Kiro）完成。详细的发现日志记录了研究过程——包括转向、失败和 AI 协作动态：
+
+📖 **[RESEARCH_JOURNEY.md](docs/RESEARCH_JOURNEY.md)** — *7 天，从零到 ICLR Workshop：一个人的 AI 辅助科研实验*
+
 ## 目标受众
 
 - AI 对齐研究者
