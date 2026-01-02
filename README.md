@@ -351,7 +351,9 @@ This comparison measures two orthogonal dimensions:
 
 This project was developed in 7 days with AI assistance (Gemini, GPT, Claude/Kiro). A detailed discovery log documenting the research process—including pivots, failures, and AI collaboration dynamics—is available:
 
-📖 **[RESEARCH_JOURNEY.md](docs/RESEARCH_JOURNEY.md)** — *7 Days to an ICLR Workshop: A Discovery Log of AI-Assisted Research*
+📖 **[RESEARCH_JOURNEY.en.md](docs/RESEARCH_JOURNEY.en.md)** — *7 Days from Zero to ICLR Workshop: A Solo AI-Assisted Research Experiment* (English)
+
+📖 **[RESEARCH_JOURNEY.md](docs/RESEARCH_JOURNEY.md)** — *7 天，从零到 ICLR Workshop：一个人的 AI 辅助科研实验* (中文)
 
 ## Intended Audience
 

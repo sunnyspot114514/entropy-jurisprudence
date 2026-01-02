@@ -7,7 +7,7 @@
 
 > 一个用于审计大语言模型规范一致性的程序化框架。
 
-## 概要（TL;DR）
+## 概要
 
 现有基准测试模型*得出什么*结论，而非*如何*推理。我们测试模型在压力下是否遵循自己声明的规则。关键发现：
 - **所有模型达到 50% ETHICS 准确率** — 但程序性指标揭示了截然不同的失败模式
@@ -353,7 +353,9 @@ python run_all.py
 
 本项目在 7 天内借助 AI 辅助（Gemini、GPT、Claude/Kiro）完成。详细的发现日志记录了研究过程——包括转向、失败和 AI 协作动态：
 
-📖 **[RESEARCH_JOURNEY.md](docs/RESEARCH_JOURNEY.md)** — *7 天，从零到 ICLR Workshop：一个人的 AI 辅助科研实验*
+📖 **[RESEARCH_JOURNEY.en.md](docs/RESEARCH_JOURNEY.en.md)** — *7 Days from Zero to ICLR Workshop: A Solo AI-Assisted Research Experiment* (English)
+
+📖 **[RESEARCH_JOURNEY.md](docs/RESEARCH_JOURNEY.md)** — *7 天，从零到 ICLR Workshop：一个人的 AI 辅助科研实验* (中文)
 
 ## 目标受众
 
