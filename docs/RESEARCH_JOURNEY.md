@@ -1209,7 +1209,7 @@ Gemini 对这个结果的评价：
 ---
 
 *写于 2026 年 1 月 3 日*
-*已投稿 ICLR 2026 Workshop (ICBINB, LLM Reasoning, Reliable Autonomy)*
+*论文已投稿至学术会议*
 
 ---
 

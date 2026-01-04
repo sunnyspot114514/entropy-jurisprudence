@@ -809,7 +809,7 @@ This was the moment of discovering Scale Hallucination—the model is "inventing
 ---
 
 *Written on January 3, 2026*
-*Submitted to ICLR 2026 Workshop (ICBINB, LLM Reasoning, Reliable Autonomy)*
+*Paper submitted to academic conferences*
 
 ---
 
